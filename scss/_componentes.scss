@@ -191,3 +191,364 @@
   text-decoration: none;
   &:hover { background: #e1f2fa; color: #286f9b; }
 }
+
+
+/*TARJETAS DE PRODUCTOS: AJUSTE DE BOTONES*/
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+}
+
+.product-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Precio y botones en columna */
+.product-purchase {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: .7rem;
+  width: 100%;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: .85rem;
+}
+
+.product-price {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .4rem;
+  min-width: 0;
+
+  strong {
+    white-space: nowrap;
+    font-size: 1.05rem;
+  }
+}
+
+/* Dos botones del mismo tamaño */
+.product-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: .5rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.details-button,
+.product-actions .add-cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  padding: .55rem .35rem;
+  font-size: .68rem;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   CALIFICACIÓN POR ESTRELLAS
+========================================= */
+
+.product-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .25rem .45rem;
+  margin: .2rem 0 .85rem;
+  padding: .55rem .65rem;
+  border: 1px solid #e4f1f7;
+  border-radius: 9px;
+  background: #f5fbfe;
+}
+
+.rating-label {
+  color: #718b98;
+  font-size: .65rem;
+  font-weight: 700;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  gap: .08rem;
+}
+
+/* Botones individuales de las estrellas */
+.product-info .rating-star {
+  width: auto;
+  margin: 0;
+  padding: 0 .06rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #d2dce1;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .2s, color .2s;
+}
+
+.product-info .rating-star:hover {
+  color: #f4b740;
+  transform: scale(1.15);
+}
+
+.product-info .rating-star.is-active {
+  color: #f4b740;
+}
+
+.rating-feedback {
+  flex-basis: 100%;
+  color: #8297a2;
+  font-size: .61rem;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 400px) {
+  .product-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .product-price {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .15rem;
+  }
+}
+
+
+/* ==========================================
+   CORRECCIÓN DEFINITIVA DE TARJETAS
+========================================== */
+
+/* La tarjeta nunca debe permitir desbordamientos */
+.product-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   CALIFICACIÓN POR ESTRELLAS
+========================================== */
+
+.product-rating {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    margin: 12px 0;
+    padding: 9px 10px;
+    border-radius: 9px;
+    background: #f1f9fd;
+    box-sizing: border-box;
+}
+
+.rating-label {
+    color: #657985;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.rating-stars {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    width: auto !important;
+    white-space: nowrap;
+}
+
+/* Neutralizar los estilos generales de los botones */
+.product-info .rating-stars .rating-star {
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 23px !important;
+    min-width: 23px;
+    height: 27px;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+
+    color: #cbd5dc !important;
+    font-family: Arial, sans-serif;
+    font-size: 23px !important;
+    line-height: 1;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    transition: color .2s ease, transform .2s ease;
+}
+
+/* Estrellas seleccionadas */
+.product-info .rating-stars .rating-star.is-active {
+    color: #f4b740 !important;
+}
+
+.product-info .rating-stars .rating-star:hover {
+    color: #e6a52b !important;
+    transform: scale(1.15);
+}
+
+.product-info .rating-stars .rating-star:focus-visible {
+    outline: 2px solid #55add5;
+    outline-offset: 2px;
+}
+
+.rating-feedback {
+    display: block;
+    flex-basis: 100%;
+    color: #8297a2;
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* ==========================================
+   PRECIO Y BOTONES
+========================================== */
+
+/* El precio queda arriba y los botones debajo */
+.product-purchase {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start;
+    gap: 12px;
+
+    width: 100%;
+    min-width: 0;
+    margin-top: auto;
+    padding-top: 13px;
+
+    box-sizing: border-box;
+    border-top: 1px solid #edf3f6;
+}
+
+.product-price {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+    width: 100%;
+    min-width: 0;
+}
+
+.product-price strong {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    color: #268dbd;
+    font-size: 17px;
+}
+
+/* Dos botones con exactamente el mismo ancho */
+.product-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch;
+
+    gap: 8px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+/* Aplicar el mismo tamaño a ambos botones */
+.product-actions .details-button,
+.product-actions .add-cart-button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 43px;
+
+    margin: 0 !important;
+    padding: 7px 5px !important;
+
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px !important;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+
+    cursor: pointer;
+}
+
+.product-actions .details-button {
+    border: 1px solid #b9dfef;
+    background: #f1f9fd;
+    color: #398fbd;
+    text-decoration: none;
+}
+
+.product-actions .details-button:hover {
+    background: #e1f2fa;
+    color: #286f9b;
+}
+
+.product-actions .add-cart-button {
+    border: 1px solid #368bb9;
+    background: linear-gradient(135deg, #4aa8d2, #368bb9);
+    color: #fff;
+    box-shadow: 0 5px 12px rgba(56,145,190,.16);
+}
+
+.product-actions .add-cart-button:hover {
+    background: linear-gradient(135deg, #318dbb, #286f9b);
+}
+
+/* En móviles, colocar los botones uno debajo del otro */
+@media (max-width: 560px) {
+    .product-actions {
+        grid-template-columns: 1fr !important;
+    }
+
+    .product-actions .details-button,
+    .product-actions .add-cart-button {
+        min-height: 40px;
+    }
+}

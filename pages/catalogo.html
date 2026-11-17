@@ -1,33 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="PequeMundo: tienda virtual de productos para bebés y niños.">
-<title>Catálogo | PequeMundo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css">
-<link rel="stylesheet" href="../css/estilos.css"><link rel="stylesheet" href="../css/estilos-less.css"><link rel="stylesheet" href="../css/estilos-sass.css">
-</head><body><div class="topbar">Envíos a todo el Perú · Productos para cada etapa de crecimiento</div>
-<header class="site-header"><div class="header-inner">
-<a class="brand" href="../index.html">Peque<span>Mundo</span></a>
-<nav class="main-nav" aria-label="Navegación principal">
-<a href="../index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
-</nav><div class="header-actions"><input class="search-box" id="busqueda-global" type="search" placeholder="Buscar..." aria-label="Buscar productos"><a class="cart-link" href="carrito.html">🛒 <span id="contador-carrito">0</span></a></div>
-</div></header><main><section class="page-hero catalog-hero"><span class="eyebrow">Un mundo de ternura y color</span><h1>Encuentra algo <em>especial</em> para tu pequeño</h1><p>Explora nuestra selección y encuentra justo lo que necesitas para cada etapa.</p></section>
-<section class="content-wrap catalog-content">
-  <div class="catalog-toolbar">
-    <div class="catalog-intro"><span class="eyebrow">Nuestra selección</span><h2>Catálogo de productos</h2><p id="resultado-conteo" aria-live="polite">6 productos encontrados</p></div>
-    <div class="catalog-filters" aria-label="Filtros del catálogo">
-      <label class="filter-field"><span>Buscar producto</span><input id="filtro-busqueda" type="search" placeholder="Ej. coche, cuna, asiento..." aria-label="Buscar por nombre o descripción"></label>
-      <label class="filter-field"><span>Categoría</span><select id="filtro-categoria" aria-label="Filtrar por categoría"><option value="todas">Todas las categorías</option><option>Asientos de seguridad</option><option>Cunas para bebés</option><option>Coches para bebés</option><option>Camas cuna</option><option>Accesorios</option></select></label>
-      <label class="filter-field"><span>Ordenar por precio</span><select id="filtro-orden" aria-label="Ordenar productos por precio"><option value="relevancia">Recomendados</option><option value="menor">Menor a mayor</option><option value="mayor">Mayor a menor</option></select></label>
-      <button class="clear-filters" id="limpiar-filtros" type="button">Limpiar filtros <span aria-hidden="true">↺</span></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="PequeMundo: tienda virtual de productos para bebés y niños."
+    />
+    <title>Catálogo | PequeMundo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+    />
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="../css/estilos-less.css" />
+    <link rel="stylesheet" href="../css/estilos-sass.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      Envíos a todo el Perú · Productos para cada etapa de crecimiento
     </div>
-  </div>
-  <div class="product-grid catalog-product-grid" id="catalogo-productos" aria-live="polite"></div>
-</section></main><footer class="site-footer"><div class="footer-inner">
-<div><a class="brand" href="../index.html" style="color:#fff">Peque<span>Mundo</span></a><p>Todo lo que tu pequeño necesita para crecer, descubrir y disfrutar cada etapa.</p></div>
-<div><h3>Explora</h3><a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a><a href="blog.html">Consejos para padres</a></div>
-<div><h3>Atención</h3><a href="contacto.html">Contáctanos</a><a href="registro.html">Crear cuenta</a><a href="login.html">Iniciar sesión</a></div>
-</div><div class="copyright">© 2026 PequeMundo. Proyecto académico de frontend.</div></footer>
-<script src="../js/productos.js"></script><script src="../js/main.js"></script><script src="../js/carrito.js"></script>
-</body></html>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html">Peque<span>Mundo</span></a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a><a href="catalogo.html">Catálogo</a
+          ><a href="ofertas.html">Ofertas</a><a href="nosotros.html">Nosotros</a
+          ><a href="blog.html">Blog</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <input
+            class="search-box"
+            id="busqueda-global"
+            type="search"
+            placeholder="Buscar..."
+            aria-label="Buscar productos"
+          /><a class="cart-link" href="carrito.html"
+            >🛒 <span id="contador-carrito">0</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero catalog-hero">
+        <span class="eyebrow">Un mundo de ternura y color</span>
+        <h1>Encuentra algo <em>especial</em> para tu pequeño</h1>
+        <p>
+          Explora nuestra selección y encuentra justo lo que necesitas para cada
+          etapa.
+        </p>
+      </section>
+      <section class="content-wrap catalog-content">
+        <div class="catalog-toolbar">
+          <div class="catalog-intro">
+            <span class="eyebrow">Nuestra selección</span>
+            <h2>Catálogo de productos</h2>
+            <p id="resultado-conteo" aria-live="polite">
+              6 productos encontrados
+            </p>
+          </div>
+          <div class="catalog-filters" aria-label="Filtros del catálogo">
+            <label class="filter-field"
+              ><span>Buscar producto</span
+              ><input
+                id="filtro-busqueda"
+                type="search"
+                placeholder="Ej. coche, cuna, asiento..."
+                aria-label="Buscar por nombre o descripción"
+            /></label>
+            <label class="filter-field"
+              ><span>Categoría</span
+              ><select id="filtro-categoria" aria-label="Filtrar por categoría">
+                <option value="todas">Todas las categorías</option>
+                <option>Asientos de seguridad</option>
+                <option>Cunas para bebés</option>
+                <option>Coches para bebés</option>
+                <option>Camas cuna</option>
+                <option>Accesorios</option>
+              </select></label
+            >
+            <label class="filter-field"
+              ><span>Ordenar por precio</span
+              ><select
+                id="filtro-orden"
+                aria-label="Ordenar productos por precio"
+              >
+                <option value="relevancia">Recomendados</option>
+                <option value="menor">Menor a mayor</option>
+                <option value="mayor">Mayor a menor</option>
+              </select></label
+            >
+            <button class="clear-filters" id="limpiar-filtros" type="button">
+              Limpiar filtros <span aria-hidden="true">↺</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="product-grid catalog-product-grid"
+          id="catalogo-productos"
+          aria-live="polite"
+        ></div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          <a class="brand" href="../index.html" style="color: #fff"
+            >Peque<span>Mundo</span></a
+          >
+          <p>
+            Todo lo que tu pequeño necesita para crecer, descubrir y disfrutar
+            cada etapa.
+          </p>
+        </div>
+        <div>
+          <h3>Explora</h3>
+          <a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a
+          ><a href="blog.html">Consejos para padres</a>
+        </div>
+        <div>
+          <h3>Atención</h3>
+          <a href="contacto.html">Contáctanos</a
+          ><a href="registro.html">Crear cuenta</a
+          ><a href="login.html">Iniciar sesión</a>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 PequeMundo. Proyecto académico de frontend.
+      </div>
+    </footer>
+    <script src="../js/productos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
+  </body>
+</html>

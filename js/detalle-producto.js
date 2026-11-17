@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const parametros = new URLSearchParams(window.location.search);
   const idPagina = document.body.dataset.productId || parametros.get("id");
-  const producto = productos.find(p => String(p.id) === String(idPagina));
+  const producto = productos.find((p) => String(p.id) === String(idPagina));
 
   if (!producto) {
     contenedor.innerHTML = `
@@ -32,10 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <span class="detail-image-label">${producto.etiqueta}</span>
         </div>
         <div class="detail-thumbnails" aria-label="Galería de fotografías">
-          ${fotos.map((foto, i) => `
-            <button class="gallery-thumb ${i === 0 ? 'active' : ''}" type="button" data-foto="${i}" aria-label="Mostrar fotografía ${i + 1}" aria-pressed="${i === 0}">
+          ${fotos
+            .map(
+              (foto, i) => `
+            <button class="gallery-thumb ${i === 0 ? "active" : ""}" type="button" data-foto="${i}" aria-label="Mostrar fotografía ${i + 1}" aria-pressed="${i === 0}">
               <img src="${foto}" alt="Vista ${i + 1} de ${producto.nombre}" loading="lazy" onerror="this.hidden=true">
-            </button>`).join("")}
+            </button>`,
+            )
+            .join("")}
         </div>
         <p class="gallery-caption">Galería visual de referencia del producto.</p>
       </div>
@@ -56,18 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div class="detail-description-panel">
       <div class="detail-description-copy"><span class="eyebrow">Conoce más</span><h2>Sobre este <em>producto</em></h2><p>${producto.descripcionCompleta || producto.descripcion}</p></div>
-      <div class="detail-specifications"><h2>Características</h2><dl>${caracteristicas.map(c => `<div><dt>${c.etiqueta}</dt><dd>${c.valor}</dd></div>`).join("")}</dl></div>
+      <div class="detail-specifications"><h2>Características</h2><dl>${caracteristicas.map((c) => `<div><dt>${c.etiqueta}</dt><dd>${c.valor}</dd></div>`).join("")}</dl></div>
     </div>
     <p class="detail-disclaimer">Información e imágenes referenciales. Las especificaciones de seguridad, dimensiones, materiales y condiciones de uso deben confirmarse con la ficha técnica del fabricante antes de adquirir un producto real.</p>
   `;
 
   const imagenPrincipal = document.getElementById("imagen-principal");
-  contenedor.querySelectorAll(".gallery-thumb").forEach(boton => {
+  contenedor.querySelectorAll(".gallery-thumb").forEach((boton) => {
     boton.addEventListener("click", () => {
       const indice = Number(boton.dataset.foto);
       imagenPrincipal.src = fotos[indice];
       imagenPrincipal.alt = `Vista ${indice + 1} de ${producto.nombre}`;
-      contenedor.querySelectorAll(".gallery-thumb").forEach(otro => {
+      contenedor.querySelectorAll(".gallery-thumb").forEach((otro) => {
         const activo = otro === boton;
         otro.classList.toggle("active", activo);
         otro.setAttribute("aria-pressed", String(activo));
@@ -82,10 +86,16 @@ document.addEventListener("DOMContentLoaded", () => {
     cantidadInput.value = Math.min(20, Math.max(1, cantidad));
   };
   document.getElementById("restar-cantidad").addEventListener("click", () => {
-    cantidadInput.value = Math.max(1, (Number.parseInt(cantidadInput.value, 10) || 1) - 1);
+    cantidadInput.value = Math.max(
+      1,
+      (Number.parseInt(cantidadInput.value, 10) || 1) - 1,
+    );
   });
   document.getElementById("sumar-cantidad").addEventListener("click", () => {
-    cantidadInput.value = Math.min(20, (Number.parseInt(cantidadInput.value, 10) || 1) + 1);
+    cantidadInput.value = Math.min(
+      20,
+      (Number.parseInt(cantidadInput.value, 10) || 1) + 1,
+    );
   });
   cantidadInput.addEventListener("change", normalizarCantidad);
   document.getElementById("agregar-detalle").addEventListener("click", () => {
@@ -95,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const relacionados = document.getElementById("productos-relacionados");
   if (relacionados) {
-    const otros = productos.filter(p => p.id !== producto.id).slice(0, 3);
+    const otros = productos.filter((p) => p.id !== producto.id).slice(0, 3);
     renderizarProductos(otros, relacionados);
   }
 });
