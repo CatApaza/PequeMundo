@@ -1,5 +1,27 @@
 /* CSS compilado de estilos.less */
-.category-card{border-radius:4px;transition:transform .25s ease,box-shadow .25s ease}.category-card:hover{transform:translateY(-5px)}.category-card .category-name{color:#31566b}.product-info .price{color:#4d9fc5;font-weight:700}
+.category-card {
+  border-radius: 4px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+}
+.category-card .category-name {
+  color: #31566b;
+}
+.product-info .price {
+  color: #4d9fc5;
+  font-weight: 700;
+}
 /* Acentos compilados desde LESS */
-.btn,.add-cart-button{background:linear-gradient(135deg,#4aa8d2,#368bb9);border-color:#368bb9}
-.btn:hover,.add-cart-button:hover{background:linear-gradient(135deg,#318dbb,#286f9b)}
+.btn,
+.add-cart-button {
+  background: linear-gradient(135deg, #4aa8d2, #368bb9);
+  border-color: #368bb9;
+}
+.btn:hover,
+.add-cart-button:hover {
+  background: linear-gradient(135deg, #318dbb, #286f9b);
+}
