@@ -1,0 +1,22 @@
+// Componentes de catálogo desarrollados con LESS.
+@azul-pequemundo: #31566b;
+@celeste-pequemundo: #a7d8f0;
+@radio-suave: 4px;
+
+.category-card {
+  border-radius: @radio-suave;
+  transition: transform .25s ease, box-shadow .25s ease;
+  &:hover { transform: translateY(-5px); }
+  .category-name { color: @azul-pequemundo; }
+}
+.product-info {
+  .price { color: #4d9fc5; font-weight: 700; }
+}
+
+@azul-acento: #398fbd;
+@azul-vivo: #55add5;
+.btn, .add-cart-button {
+  background: linear-gradient(135deg, #4aa8d2, #368bb9);
+  border-color: #368bb9;
+  &:hover { background: linear-gradient(135deg, #318dbb, #286f9b); }
+}
