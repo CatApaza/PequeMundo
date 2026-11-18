@@ -137,3 +137,68 @@
     padding: 1.15rem;
   }
 }
+.marcas-carrusel {
+  overflow: hidden;
+  margin: 2rem auto;
+  padding: 1.75rem 0;
+  border: 1px solid #e3eef3;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f3f9fc);
+  box-shadow: 0 10px 28px rgba(49, 86, 107, 0.07);
+}
+.marcas-carrusel h2 {
+  margin: 0 0 1.25rem;
+  color: #31566b;
+  text-align: center;
+  font-size: 1.35rem;
+}
+.marcas-carrusel:hover .marcas-carrusel__pista {
+  animation-play-state: paused;
+}
+.marcas-carrusel__ventana {
+  overflow: hidden;
+  width: 100%;
+}
+.marcas-carrusel__pista {
+  display: flex;
+  width: max-content;
+  animation: pasar-marcas 24s linear infinite;
+}
+.marcas-carrusel__grupo {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+.marca {
+  display: grid;
+  place-items: center;
+  width: 170px;
+  min-height: 70px;
+  padding: 0.75rem;
+  border: 1px solid #e3eef3;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #31566b;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(49, 86, 107, 0.05);
+}
+@keyframes pasar-marcas {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 640px) {
+  .marca {
+    width: 140px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marcas-carrusel__pista {
+    animation: none;
+  }
+}
