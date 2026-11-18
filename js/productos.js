@@ -59,7 +59,7 @@ const productos = [
     precio: 459.9,
     categoria: "Coches para bebés",
     imagen:
-      "https://images.unsplash.com/photo-1647549409410-667dbd56dbf9?auto=format&fit=crop&w=900&q=85",
+      "https://plus.unsplash.com/premium_photo-1661418384831-134341adc135?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     alt: "Cochecito para bebé de diseño compacto",
     etiqueta: "Para paseos",
     descripcion: "Una opción práctica para salir a descubrir el mundo.",
@@ -67,9 +67,9 @@ const productos = [
     descripcionCompleta:
       "Disfruta de los paseos cotidianos con un coche compacto plegable, pensado para quienes valoran la practicidad y un diseño fácil de integrar a la rutina familiar. Su concepto plegable permite guardarlo ocupando menos espacio que un coche de estructura fija. Comprueba las medidas, el peso máximo y las instrucciones del fabricante antes de usar un modelo real.",
     galeria: [
-      "https://images.unsplash.com/photo-1647549409410-667dbd56dbf9?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1647549409410-667dbd56dbf9?auto=format&fit=crop&w=900&q=85&h=720&fit=crop&crop=entropy",
-      "https://images.unsplash.com/photo-1647549409410-667dbd56dbf9?auto=format&fit=crop&w=900&q=85&h=720&fit=crop&crop=faces",
+      "https://plus.unsplash.com/premium_photo-1661418384831-134341adc135?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1539893147390-a9c1d69f00be?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1559135141-2bea6465fccf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     ],
     caracteristicas: [
       { etiqueta: "Categoría", valor: "Coches para bebés" },
@@ -137,7 +137,7 @@ const productos = [
     precio: 69.9,
     categoria: "Accesorios",
     imagen:
-      "https://images.unsplash.com/photo-1707143017681-777ab2ac79a4?auto=format&fit=crop&w=900&q=85",
+      "https://images.unsplash.com/photo-1644249485266-b60dcf31e42b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     alt: "Bebé explorando un juguete durante el juego",
     etiqueta: "Un toque de ternura",
     descripcion: "Un detalle especial para acompañar sus primeros juegos.",
@@ -145,8 +145,8 @@ const productos = [
     descripcionCompleta:
       "Añade un detalle especial al espacio de descanso con este móvil musical para cuna. Su propuesta combina un elemento decorativo con una función musical para acompañar momentos tranquilos y rutinas cotidianas. Para un producto real, verifica el sistema de fijación, las recomendaciones de edad y las indicaciones de seguridad del fabricante.",
     galeria: [
-      "https://images.unsplash.com/photo-1707143017681-777ab2ac79a4?auto=format&fit=crop&w=900&q=85",
-      "https://images.unsplash.com/photo-1707143017681-777ab2ac79a4?auto=format&fit=crop&w=900&q=85&h=720&fit=crop&crop=entropy",
+      "https://images.unsplash.com/photo-1505043203398-7e4c111acbfa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+      "https://images.unsplash.com/photo-1644249485266-b60dcf31e42b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D&h=720&fit=crop&crop=entropy",
       "https://images.unsplash.com/photo-1707143017681-777ab2ac79a4?auto=format&fit=crop&w=900&q=85&h=720&fit=crop&crop=faces",
     ],
     caracteristicas: [
