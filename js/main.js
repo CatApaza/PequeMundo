@@ -60,24 +60,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 3. Formularios
-  const form = document.getElementById("form-contacto");
-  if (form)
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const mensaje = document.getElementById("mensaje-form");
-      mensaje.hidden = false;
-      mensaje.textContent = "Tu consulta se registró en esta demostración. ¡Gracias!";
-      form.reset();
+  const manejarFormulario = (idFormulario, idMensaje, texto) => {
+    const formulario = document.getElementById(idFormulario);
+    if (!formulario) return;
+    formulario.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      const mensaje = document.getElementById(idMensaje);
+      if (mensaje) {
+        mensaje.hidden = false;
+        mensaje.textContent = texto;
+      }
+      formulario.reset();
     });
+  };
 
-  const registro = document.getElementById("form-registro");
-  if (registro)
-    registro.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const mensaje = document.getElementById("mensaje-form");
-      mensaje.hidden = false;
-      mensaje.textContent = "Formulario validado correctamente (demostración frontend).";
-    });
+  manejarFormulario(
+    "form-contacto",
+    "mensaje-form",
+    "Tu consulta se registró en esta demostración. ¡Gracias!"
+  );
+  manejarFormulario(
+    "form-registro",
+    "mensaje-form",
+    "Formulario validado correctamente (demostración frontend)."
+  );
+  manejarFormulario(
+    "form-login",
+    "mensaje-form-login",
+    "Datos de acceso validados en el navegador (demostración frontend)."
+  );
+  manejarFormulario(
+    "form-reclamos",
+    "mensaje-form-reclamos",
+    "Tu reclamo fue registrado en esta demostración. Recibirás una respuesta en un plazo máximo de 15 días hábiles."
+  );
+  manejarFormulario(
+    "form-clientes",
+    "mensaje-form-clientes",
+    "Tu ficha de cliente se registró correctamente en esta demostración."
+  );
+
+  // 3.1 Presupuesto dinámico del formulario de clientes
+  const rangoPresupuesto = document.getElementById("cliente-presupuesto");
+  const salidaPresupuesto = document.getElementById("salida-presupuesto");
+  if (rangoPresupuesto && salidaPresupuesto) {
+    const actualizarPresupuesto = () => {
+      salidaPresupuesto.textContent = `S/ ${Number(rangoPresupuesto.value).toLocaleString("es-PE")}`;
+    };
+    rangoPresupuesto.addEventListener("input", actualizarPresupuesto);
+    document
+      .getElementById("form-clientes")
+      ?.addEventListener("reset", () => requestAnimationFrame(actualizarPresupuesto));
+    actualizarPresupuesto();
+  }
 
   // 4. Botón flotante de WhatsApp automático
   const telefono = "51935964167"; 

@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Libro de reclamaciones de PequeMundo: formulario completo para registrar reclamos y quejas con todos los datos de contacto."
+    />
+    <meta name="author" content="PequeMundo" />
+    <meta
+      name="keywords"
+      content="libro de reclamaciones, reclamo, queja, formulario, PequeMundo"
+    />
+    <title>Libro de reclamaciones | PequeMundo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a7d8f0'/%3E%3Cpath d='M16 24s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 24 14c0 5.3-8 10-8 10z' fill='%2331566b'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+    />
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="../css/estilos-less.css" />
+    <link rel="stylesheet" href="../css/estilos-sass.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <p>Atención al cliente · Libro de reclamaciones virtual</p>
+    </div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html">Peque<span>Mundo</span><small>CRECIENDO JUNTOS</small></a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Consejos</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <input
+            class="search-box"
+            id="busqueda-global"
+            type="search"
+            placeholder="Buscar..."
+            aria-label="Buscar productos"
+          /><a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span id="contador-carrito">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <span class="eyebrow">Atención al cliente</span>
+        <h1>Libro de reclamaciones</h1>
+        <p>
+          Registra tu reclamo o queja. Completa todos los campos para que
+          podamos identificar el caso y darte una respuesta en el plazo
+          indicado.
+        </p>
+      </section>
+
+      <section class="content-wrap">
+        <div class="contact-layout">
+          <form
+            class="form-card form-wide"
+            id="form-reclamos"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2><i class="fa-solid fa-file-pen" aria-hidden="true"></i> Datos del reclamo</h2>
+
+            <fieldset>
+              <legend>1. Identificación del consumidor</legend>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="reclamo-nombre">Nombre completo <span class="required">*</span></label>
+                  <input
+                    id="reclamo-nombre"
+                    name="nombre"
+                    type="text"
+                    placeholder="Nombres y apellidos"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-dni">DNI <span class="required">*</span></label>
+                  <input
+                    id="reclamo-dni"
+                    name="dni"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]{8}"
+                    maxlength="8"
+                    placeholder="8 dígitos"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-email">Correo electrónico <span class="required">*</span></label>
+                  <input
+                    id="reclamo-email"
+                    name="email"
+                    type="email"
+                    placeholder="correo@ejemplo.com"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-telefono">Teléfono <span class="required">*</span></label>
+                  <input
+                    id="reclamo-telefono"
+                    name="telefono"
+                    type="tel"
+                    placeholder="+51 999 999 999"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+                <div class="form-field full">
+                  <label for="reclamo-direccion">Dirección</label>
+                  <input
+                    id="reclamo-direccion"
+                    name="direccion"
+                    type="text"
+                    placeholder="Av. / Calle, número, distrito"
+                    autocomplete="address-line1"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-departamento">Departamento</label>
+                  <select id="reclamo-departamento" name="departamento">
+                    <option value="">Selecciona una opción</option>
+                    <option>Lima</option>
+                    <option>Arequipa</option>
+                    <option>Cusco</option>
+                    <option>La Libertad</option>
+                    <option>Piura</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-edad">Fecha de nacimiento</label>
+                  <input id="reclamo-edad" name="nacimiento" type="date" />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>2. Detalle del reclamo o queja</legend>
+              <div class="form-grid">
+                <div class="form-field full">
+                  <span class="field-label">Tipo de documento <span class="required">*</span></span>
+                  <div class="opciones-inline">
+                    <label class="opcion">
+                      <input type="radio" name="tipo-documento" value="reclamo" required />
+                      <span>Reclamo</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="radio" name="tipo-documento" value="queja" />
+                      <span>Queja</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="reclamo-fecha">Fecha del incidente <span class="required">*</span></label>
+                  <input id="reclamo-fecha" name="fecha" type="date" required />
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-pedido">Número de pedido</label>
+                  <input
+                    id="reclamo-pedido"
+                    name="pedido"
+                    type="text"
+                    placeholder="Ej. PM-2026-0042"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <span class="field-label">Tipo de bien <span class="required">*</span></span>
+                  <div class="opciones-inline">
+                    <label class="opcion">
+                      <input type="radio" name="tipo-bien" value="producto" required />
+                      <span>Producto</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="radio" name="tipo-bien" value="servicio" />
+                      <span>Servicio</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="reclamo-monto">Monto reclamado (S/)</label>
+                  <input
+                    id="reclamo-monto"
+                    name="monto"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    placeholder="0.00"
+                  />
+                </div>
+
+                <div class="form-field full">
+                  <label for="reclamo-detalle">Descripción del hecho <span class="required">*</span></label>
+                  <textarea
+                    id="reclamo-detalle"
+                    name="detalle"
+                    rows="5"
+                    minlength="20"
+                    placeholder="Describe lo ocurrido con el mayor detalle posible."
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-field full">
+                  <label for="reclamo-pedido-concreto">Pedido concreto <span class="required">*</span></label>
+                  <textarea
+                    id="reclamo-pedido-concreto"
+                    name="pedido-concreto"
+                    rows="3"
+                    placeholder="¿Qué solución esperas recibir?"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-field full">
+                  <label for="reclamo-adjunto">Archivo adjunto (opcional)</label>
+                  <input
+                    id="reclamo-adjunto"
+                    name="adjunto"
+                    type="file"
+                    accept="image/*,.pdf"
+                    aria-describedby="reclamo-adjunto-ayuda"
+                  />
+                  <small id="reclamo-adjunto-ayuda" class="field-help">
+                    Formatos permitidos: JPG, PNG o PDF. Tamaño máximo referencial: 5 MB.
+                  </small>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-check">
+              <input id="reclamo-veracidad" name="veracidad" type="checkbox" required />
+              <label for="reclamo-veracidad">
+                Declaro que la información proporcionada es verdadera.
+                <span class="required">*</span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input id="reclamo-politica" name="politica" type="checkbox" required />
+              <label for="reclamo-politica">
+                Acepto la política de tratamiento de datos personales.
+                <span class="required">*</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">
+                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Enviar reclamo
+              </button>
+              <button class="btn btn-secundario" type="reset">
+                <i class="fa-solid fa-eraser" aria-hidden="true"></i> Limpiar
+              </button>
+            </div>
+            <p id="mensaje-form-reclamos" class="notice" role="status" hidden></p>
+          </form>
+
+          <aside class="info-card reclamo-aside">
+            <h2><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Antes de enviar</h2>
+            <p>
+              Este formulario es una demostración académica. No envía datos a
+              un servidor real.
+            </p>
+            <ul class="lista-beneficios">
+              <li>Ten a mano tu número de pedido o comprobante.</li>
+              <li>Describe fechas, productos y personas involucradas.</li>
+              <li>Adjunta una fotografía si el caso lo requiere.</li>
+              <li>Revisa tu correo: la respuesta se envía a esa dirección.</li>
+            </ul>
+
+            <h2>Plazos de respuesta</h2>
+            <div class="tabla-responsive">
+              <table class="tabla-datos tabla-datos--compacta">
+                <caption>Plazos referenciales de atención</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Etapa</th>
+                    <th scope="col">Plazo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Acuse de recibo</th>
+                    <td>24 horas</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Respuesta inicial</th>
+                    <td>3 días hábiles</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Solución final</th>
+                    <td>15 días hábiles</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-about">
+          <a class="brand brand-footer" href="../index.html">Peque<span>Mundo</span><small>CRECIENDO JUNTOS</small></a>
+          <p>
+            Un espacio creado con cariño para acompañar los momentos más
+            especiales de tu familia.
+          </p>
+        </div>
+        <div>
+          <h2>Explora</h2>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="ofertas.html">Ofertas</a>
+          <a href="blog.html">Consejos</a>
+          <a href="../index.html#recursos">Recursos del proyecto</a>
+        </div>
+        <div>
+          <h2>Te ayudamos</h2>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contáctanos</a>
+          <a href="clientes.html">Clientes</a>
+          <a href="reclamos.html">Reclamos</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 PequeMundo. Proyecto académico de frontend.</span>
+        <span>Hecho con <b title="amor">♡</b> para los más pequeños.</span>
+      </div>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Registro de clientes de PequeMundo: formulario completo con datos personales, dirección, preferencias y adjuntos."
+    />
+    <meta name="author" content="PequeMundo" />
+    <meta
+      name="keywords"
+      content="clientes, registro, formulario HTML, datos personales, PequeMundo"
+    />
+    <title>Clientes | PequeMundo</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a7d8f0'/%3E%3Cpath d='M16 24s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 24 14c0 5.3-8 10-8 10z' fill='%2331566b'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css"
+    />
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="../css/estilos-less.css" />
+    <link rel="stylesheet" href="../css/estilos-sass.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <p>Envíos a todo el Perú · Registro de clientes PequeMundo</p>
+    </div>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html">Peque<span>Mundo</span><small>CRECIENDO JUNTOS</small></a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a><a href="nosotros.html">Nosotros</a><a href="blog.html">Consejos</a><a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="header-actions">
+          <input
+            class="search-box"
+            id="busqueda-global"
+            type="search"
+            placeholder="Buscar..."
+            aria-label="Buscar productos"
+          /><a class="cart-link" href="carrito.html" aria-label="Ver carrito">
+            <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+            <span id="contador-carrito">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <span class="eyebrow">Comunidad PequeMundo</span>
+        <h1>Registro de clientes</h1>
+        <p>
+          Completa tu ficha para recibir novedades, ofertas y un seguimiento
+          más cercano de tus pedidos. Los campos marcados con
+          <span class="required">*</span> son obligatorios.
+        </p>
+      </section>
+
+      <section class="content-wrap">
+        <div class="contact-layout">
+          <form
+            class="form-card form-wide"
+            id="form-clientes"
+            action="#"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <h2><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Ficha del cliente</h2>
+
+            <fieldset>
+              <legend>1. Datos personales</legend>
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="cliente-nombre">Nombres <span class="required">*</span></label>
+                  <input
+                    id="cliente-nombre"
+                    name="nombres"
+                    type="text"
+                    autocomplete="given-name"
+                    placeholder="Tus nombres"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-apellidos">Apellidos <span class="required">*</span></label>
+                  <input
+                    id="cliente-apellidos"
+                    name="apellidos"
+                    type="text"
+                    autocomplete="family-name"
+                    placeholder="Tus apellidos"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-dni">DNI <span class="required">*</span></label>
+                  <input
+                    id="cliente-dni"
+                    name="dni"
+                    type="text"
+                    pattern="[0-9]{8}"
+                    maxlength="8"
+                    inputmode="numeric"
+                    placeholder="8 dígitos"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-nacimiento">Fecha de nacimiento</label>
+                  <input
+                    id="cliente-nacimiento"
+                    name="nacimiento"
+                    type="date"
+                    autocomplete="bday"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-email">Correo electrónico <span class="required">*</span></label>
+                  <input
+                    id="cliente-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    placeholder="correo@ejemplo.com"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-telefono">Teléfono <span class="required">*</span></label>
+                  <input
+                    id="cliente-telefono"
+                    name="telefono"
+                    type="tel"
+                    autocomplete="tel"
+                    placeholder="+51 999 999 999"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-password">Contraseña <span class="required">*</span></label>
+                  <input
+                    id="cliente-password"
+                    name="password"
+                    type="password"
+                    minlength="6"
+                    autocomplete="new-password"
+                    placeholder="Mínimo 6 caracteres"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-foto">Fotografía de perfil</label>
+                  <input id="cliente-foto" name="foto" type="file" accept="image/*" />
+                  <small class="field-help">Opcional. Formatos JPG o PNG.</small>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>2. Dirección y contacto</legend>
+              <div class="form-grid">
+                <div class="form-field full">
+                  <label for="cliente-direccion">Dirección <span class="required">*</span></label>
+                  <input
+                    id="cliente-direccion"
+                    name="direccion"
+                    type="text"
+                    autocomplete="address-line1"
+                    placeholder="Av. / Calle, número, departamento"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-ciudad">Ciudad / distrito</label>
+                  <input
+                    id="cliente-ciudad"
+                    name="ciudad"
+                    type="text"
+                    autocomplete="address-level2"
+                    placeholder="Ej. Miraflores"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-region">Departamento</label>
+                  <select id="cliente-region" name="departamento" autocomplete="address-level1">
+                    <option value="">Selecciona una opción</option>
+                    <option>Lima</option>
+                    <option>Arequipa</option>
+                    <option>Cusco</option>
+                    <option>La Libertad</option>
+                    <option>Piura</option>
+                    <option>Lambayeque</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="cliente-codigo">Código postal</label>
+                  <input
+                    id="cliente-codigo"
+                    name="codigo-postal"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="5"
+                    placeholder="15000"
+                  />
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Horario preferido de contacto</span>
+                  <div class="opciones-inline">
+                    <label class="opcion">
+                      <input type="radio" name="horario" value="manana" />
+                      <span>Mañana</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="radio" name="horario" value="tarde" checked />
+                      <span>Tarde</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>3. Preferencias de compra</legend>
+              <div class="form-grid">
+                <div class="form-field full">
+                  <span class="field-label">Categorías de interés</span>
+                  <div class="opciones-inline">
+                    <label class="opcion">
+                      <input type="checkbox" name="interes" value="asientos" />
+                      <span>Asientos de seguridad</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="checkbox" name="interes" value="cunas" />
+                      <span>Cunas y camas</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="checkbox" name="interes" value="coches" />
+                      <span>Coches para bebés</span>
+                    </label>
+                    <label class="opcion">
+                      <input type="checkbox" name="interes" value="accesorios" />
+                      <span>Accesorios</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="form-field full">
+                  <label for="cliente-presupuesto">Presupuesto habitual</label>
+                  <output id="salida-presupuesto" for="cliente-presupuesto">S/ 500</output>
+                  <input
+                    id="cliente-presupuesto"
+                    name="presupuesto"
+                    type="range"
+                    min="100"
+                    max="2000"
+                    step="50"
+                    value="500"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="cliente-tipo">Tipo de cliente</label>
+                  <select id="cliente-tipo" name="tipo-cliente">
+                    <option value="persona">Persona natural</option>
+                    <option value="familia">Familia</option>
+                    <option value="empresa">Empresa o institución</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="cliente-comentarios">Comentarios</label>
+                  <textarea
+                    id="cliente-comentarios"
+                    name="comentarios"
+                    rows="3"
+                    placeholder="Cuéntanos qué productos buscas."
+                  ></textarea>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-check">
+              <input id="cliente-novedades" name="novedades" type="checkbox" checked />
+              <label for="cliente-novedades">Deseo recibir novedades y ofertas por correo.</label>
+            </div>
+            <div class="form-check">
+              <input id="cliente-politica" name="politica" type="checkbox" required />
+              <label for="cliente-politica">
+                Acepto la política de privacidad y el tratamiento de mis datos.
+                <span class="required">*</span>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn" type="submit">
+                <i class="fa-solid fa-user-check" aria-hidden="true"></i> Registrar cliente
+              </button>
+              <button class="btn btn-secundario" type="reset">
+                <i class="fa-solid fa-eraser" aria-hidden="true"></i> Limpiar
+              </button>
+            </div>
+            <p id="mensaje-form-clientes" class="notice" role="status" hidden></p>
+          </form>
+
+          <aside class="info-card">
+            <h2><i class="fa-solid fa-heart" aria-hidden="true"></i> Ser cliente PequeMundo</h2>
+            <p>
+              Tu ficha nos permite preparar recomendaciones y avisarte cuando
+              lleguen productos de las categorías que te interesan.
+            </p>
+            <ul class="lista-beneficios">
+              <li>Seguimiento de pedidos en un solo lugar.</li>
+              <li>Ofertas personalizadas por categoría.</li>
+              <li>Atención preferente por WhatsApp.</li>
+              <li>Historial de compras y reclamos.</li>
+            </ul>
+
+            <h2>Datos de atención</h2>
+            <dl class="lista-definiciones">
+              <dt>Correo</dt>
+              <dd><a href="mailto:hola@pequemundo.pe">hola@pequemundo.pe</a></dd>
+              <dt>WhatsApp</dt>
+              <dd><a href="https://wa.me/51935964167">+51 935 964 167</a></dd>
+              <dt>Horario</dt>
+              <dd>Lunes a sábado, 9:00 a 18:00</dd>
+              <dt>Ubicación</dt>
+              <dd>Lima, Perú</dd>
+            </dl>
+            <p class="field-help">
+              Los datos de esta ficha son ficticios y se usan solo para la
+              demostración del proyecto.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-about">
+          <a class="brand brand-footer" href="../index.html">Peque<span>Mundo</span><small>CRECIENDO JUNTOS</small></a>
+          <p>
+            Un espacio creado con cariño para acompañar los momentos más
+            especiales de tu familia.
+          </p>
+        </div>
+        <div>
+          <h2>Explora</h2>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="ofertas.html">Ofertas</a>
+          <a href="blog.html">Consejos</a>
+          <a href="../index.html#recursos">Recursos del proyecto</a>
+        </div>
+        <div>
+          <h2>Te ayudamos</h2>
+          <a href="nosotros.html">Nosotros</a>
+          <a href="contacto.html">Contáctanos</a>
+          <a href="clientes.html">Clientes</a>
+          <a href="reclamos.html">Reclamos</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 PequeMundo. Proyecto académico de frontend.</span>
+        <span>Hecho con <b title="amor">♡</b> para los más pequeños.</span>
+      </div>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
+  </body>
+</html>

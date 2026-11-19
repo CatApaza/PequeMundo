@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../css/estilos.css" />
     <link rel="stylesheet" href="../css/estilos-less.css" />
     <link rel="stylesheet" href="../css/estilos-sass.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a7d8f0'/%3E%3Cpath d='M16 24s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 24 14c0 5.3-8 10-8 10z' fill='%2331566b'/%3E%3C/svg%3E" />
   </head>
   <body>
     <div class="topbar">
@@ -53,24 +55,101 @@
         <p>Completa tus datos para crear una cuenta de cliente.</p>
       </section>
       <section class="content-wrap">
-        <form class="form-card" id="form-registro">
-          <label>Nombres y apellidos</label
-          ><input required name="nombre" /><label>Correo electrónico</label
-          ><input required type="email" name="email" /><label>Contraseña</label
-          ><input
-            required
-            type="password"
-            name="password"
-            minlength="6"
-          /><button class="btn" type="submit">Crear cuenta</button>
-          <p id="mensaje-form" class="notice" hidden></p>
+        <form class="form-card" id="form-registro" action="#" method="post">
+          <h2><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Crear cuenta</h2>
+          <fieldset>
+            <legend>Datos personales</legend>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="registro-nombre">Nombres <span class="required">*</span></label>
+                <input
+                  id="registro-nombre"
+                  type="text"
+                  required
+                  name="nombre"
+                  autocomplete="given-name"
+                  placeholder="Tus nombres"
+                />
+              </div>
+              <div class="form-field">
+                <label for="registro-apellidos">Apellidos <span class="required">*</span></label>
+                <input
+                  id="registro-apellidos"
+                  type="text"
+                  required
+                  name="apellidos"
+                  autocomplete="family-name"
+                  placeholder="Tus apellidos"
+                />
+              </div>
+              <div class="form-field">
+                <label for="registro-email">Correo electrónico <span class="required">*</span></label>
+                <input
+                  id="registro-email"
+                  required
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="correo@ejemplo.com"
+                />
+              </div>
+              <div class="form-field">
+                <label for="registro-telefono">Teléfono</label>
+                <input
+                  id="registro-telefono"
+                  name="telefono"
+                  type="tel"
+                  autocomplete="tel"
+                  placeholder="+51 999 999 999"
+                />
+              </div>
+              <div class="form-field">
+                <label for="registro-nacimiento">Fecha de nacimiento</label>
+                <input
+                  id="registro-nacimiento"
+                  name="nacimiento"
+                  type="date"
+                  autocomplete="bday"
+                />
+              </div>
+              <div class="form-field">
+                <label for="registro-password">Contraseña <span class="required">*</span></label>
+                <input
+                  id="registro-password"
+                  required
+                  type="password"
+                  name="password"
+                  minlength="6"
+                  autocomplete="new-password"
+                  placeholder="Mínimo 6 caracteres"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-check">
+            <input id="registro-politica" name="politica" type="checkbox" required />
+            <label for="registro-politica">
+              Acepto la política de privacidad y el tratamiento de mis datos.
+              <span class="required">*</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">
+              <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+              Crear cuenta
+            </button>
+            <a class="btn btn-secundario" href="login.html">Ya tengo cuenta</a>
+          </div>
+          <p id="mensaje-form" class="notice" role="status" hidden></p>
         </form>
       </section>
     </main>
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <a class="brand" href="../index.html" style="color: #fff"
+          <a class="brand brand-footer" href="../index.html" 
             >Peque<span>Mundo</span></a
           >
           <p>
@@ -82,6 +161,7 @@
           <h3>Explora</h3>
           <a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a
           ><a href="blog.html">Consejos para padres</a>
+          <a href="../index.html#recursos">Recursos del proyecto</a>
         </div>
         <div>
           <h3>Atención</h3>

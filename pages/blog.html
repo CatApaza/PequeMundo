@@ -19,7 +19,9 @@
     />
     <link rel="stylesheet" href="../css/estilos.css" />
     <link rel="stylesheet" href="../css/estilos-less.css" />
-    <link rel="stylesheet" href="../scss/estilos.css">
+  <link rel="stylesheet" href="../css/estilos-sass.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a7d8f0'/%3E%3Cpath d='M16 24s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 24 14c0 5.3-8 10-8 10z' fill='%2331566b'/%3E%3C/svg%3E" />
   </head>
   <body>
     <div class="topbar">
@@ -57,35 +59,89 @@
   </section>
 
   <section class="content-wrap">
-    <div class="blog-layout">
-      <article class="info-card" style="padding: 2rem">
+    <div class="marquesina" role="marquee" aria-label="Consejos para la familia">
+      <div class="marquesina__pista">
+        <div class="marquesina__grupo">
+          <span><i class="fa-solid fa-heart" aria-hidden="true"></i> Seguridad en cada etapa</span>
+          <span><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Espacios protegidos</span>
+          <span><i class="fa-solid fa-house" aria-hidden="true"></i> Ideas para organizar el hogar</span>
+          <span><i class="fa-solid fa-mug-sock" aria-hidden="true"></i> Consejos prácticos para las familias</span>
+        </div>
+        <div class="marquesina__grupo" aria-hidden="true">
+          <span><i class="fa-solid fa-heart" aria-hidden="true"></i> Seguridad en cada etapa</span>
+          <span><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Espacios protegidos</span>
+          <span><i class="fa-solid fa-house" aria-hidden="true"></i> Ideas para organizar el hogar</span>
+          <span><i class="fa-solid fa-mug-sock" aria-hidden="true"></i> Consejos prácticos para las familias</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid-x grid-margin-x grid-margin-y">
+      <div class="cell small-12 medium-6">
+        <div class="callout success">
+          <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Envíos a todo el Perú</h3>
+          <p>
+            Revisa los plazos de entrega según tu ciudad antes de realizar tu
+            pedido en el <a href="catalogo.html">catálogo</a>.
+          </p>
+        </div>
+      </div>
+      <div class="cell small-12 medium-6">
+        <div class="callout warning">
+          <h3><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Precios referenciales</h3>
+          <p>
+            Este sitio es un proyecto académico; los valores y la disponibilidad
+            son ilustrativos.
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="blog-etiquetas">
+      <span class="label success">Guía actualizada</span>
+      <span class="label secondary">4 minutos de lectura</span>
+      <span class="badge">8 consejos</span>
+    </p>
+    <div class="grid-x grid-margin-x grid-margin-y blog-layout">
+      <article class="cell small-12 large-8 info-card blog-article">
         <h2>Consejos para acompañar el crecimiento</h2>
         <p>
           Organiza los espacios de tu hogar pensando en la seguridad,
-          comodidad y autonomía de los más pequeños.
+          comodidad y autonomía de los más pequeños. Un ambiente ordenado
+          facilita las rutinas y permite que los niños exploren con confianza.
+        </p>
+        <blockquote>
+          «Un espacio pensado con cariño también educa: invita al juego, al
+          descanso y al cuidado de los objetos».
+        </blockquote>
+        <p>
+          <strong>Recomendación:</strong> revisa periódicamente el estado de los
+          muebles, las sujeciones y los sistemas de retención infantil. Ante
+          cualquier duda, consulta el manual del fabricante.
         </p>
 
         <iframe
+          class="video-embed"
           src="https://www.youtube-nocookie.com/embed/l5EcmjvjjLQ"
           title="Video de consejos para familias"
-          width="100%"
           height="360"
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-          style="border: 0; border-radius: 12px"
         ></iframe>
 
-        <div style="margin-top: 1.5rem">
+        <div class="blog-actions">
           <a class="btn" href="catalogo.html">Explorar productos</a>
         </div>
       </article>
 
-      <aside class="info-card" style="padding: 1.5rem">
+      <aside class="cell small-12 large-4 info-card blog-aside">
         <h2>Temas destacados</h2>
-        <p><a href="catalogo.html">Catálogo de productos</a></p>
-        <p><a href="ofertas.html">Ofertas actuales</a></p>
-        <p><a href="contacto.html">Consultar un producto</a></p>
+        <ul class="lista-enlaces">
+          <li><a href="catalogo.html">Catálogo de productos</a></li>
+          <li><a href="ofertas.html">Ofertas actuales</a></li>
+          <li><a href="tutoriales.html">Tutoriales para padres</a></li>
+          <li><a href="tablas.html">Comparativa de productos</a></li>
+          <li><a href="contacto.html">Consultar un producto</a></li>
+        </ul>
       </aside>
     </div>
   </section>
@@ -93,7 +149,7 @@
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <a class="brand" href="../index.html" style="color: #fff"
+          <a class="brand brand-footer" href="../index.html" 
             >Peque<span>Mundo</span></a
           >
           <p>
@@ -105,6 +161,7 @@
           <h3>Explora</h3>
           <a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a
           ><a href="blog.html">Consejos para padres</a>
+          <a href="../index.html#recursos">Recursos del proyecto</a>
         </div>
         <div>
           <h3>Atención</h3>

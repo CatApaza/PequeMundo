@@ -1,0 +1,87 @@
+// =========================================================
+// DISEÑO RESPONSIVO CON MEDIA QUERIES
+// Ajustes de la rejilla, componentes Foundation y contenido
+// multimedia en cada breakpoint.
+// =========================================================
+
+@media (max-width: 1024px) {
+  .grid-container {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  .vector-corazon {
+    flex-basis: 120px;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 960px) {
+  .tabs {
+    flex-wrap: wrap;
+
+    .tabs-title > a {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.74rem;
+    }
+  }
+
+  .media-card--audio,
+  .media-card--video {
+    padding: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .vector-corazon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .marquesina__pista {
+    animation-duration: 26s;
+  }
+}
+
+@media (max-width: 560px) {
+  .tabs {
+    display: block;
+
+    .tabs-title {
+      width: 100%;
+    }
+
+    .tabs-title > a {
+      border-radius: 8px;
+      text-align: center;
+    }
+  }
+
+  .progress {
+    height: 1.1rem;
+  }
+
+  .media-meta {
+    font-size: 0.66rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquesina__pista {
+    animation: none;
+  }
+}
