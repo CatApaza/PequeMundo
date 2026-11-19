@@ -21,7 +21,7 @@ están guardados en la carpeta media/ y funcionan sin conexión.
 2. ESTRUCTURA
 ------------------------------------------------
 index.html                     Página de inicio
-pages/                         27 páginas internas
+pages/                         26 páginas internas
 css/estilos.css                Estilos base (10 %)
 css/estilos-less.css           Compilado de LESS (15 %)
 css/estilos-sass.css           Compilado de SASS (15 %)
@@ -51,7 +51,7 @@ Páginas internas:
 - Formularios: contacto.html, clientes.html, reclamos.html, login.html,
   registro.html.
 - Contenido y recursos: nosotros.html, blog.html, tutoriales.html,
-  tablas.html, marcos.html, frames-demo.html, carrito.html.
+  tablas.html (comparativa de productos), frames-demo.html, carrito.html.
 
 ------------------------------------------------
 3. CUMPLIMIENTO DE LA CONSIGNA
@@ -61,15 +61,15 @@ Tecnologías de estilos
   mixins, anidación y funciones de color (fade).
 - SASS: scss/estilos.scss importa parciales con variables, mixins,
   anidación y módulos por tema. Se compila en css/estilos-sass.css.
-- Foundation CSS: se enlaza el CDN en 27 páginas (todas salvo el frameset
-  frames-demo.html). En tutoriales.html se
+- Foundation CSS: se enlaza el CDN en la página de inicio y en las páginas
+  internas, excepto en el frameset frames-demo.html. En tutoriales.html se
   usan grid-x/cell, tabs, accordion, reveal, label, badge, progress y clases
   de visibilidad. En blog.html se usan callout, label y badge. Las páginas de
   catálogo y productos usan grid-x/cell y button dentro del diseño de la
   tienda.
 
 HTML
-- 28 páginas (mínimo exigido: 14).
+- 27 páginas (mínimo exigido: 14).
 - Estructura completa: DOCTYPE, html lang, head, meta charset, viewport,
   description, author, keywords, favicon, body.
 - Etiquetas de texto: h1-h3, p, strong, em, br, blockquote, ul, ol, li,
@@ -85,12 +85,13 @@ HTML
   galería de Foundation, audio MP3, video de un bebé con póster y
   subtítulos VTT, además de un icono SVG. Todos los recursos están
   relacionados con el cuidado infantil.
-- Tablas: caption, colgroup, col, thead, tbody, tfoot, th con scope,
-  colspan y estilos propios.
-- Marcos: iframes de página interna, video y mapa; pagina marcos.html.
-  Frames clásicos: frames-demo.html con frameset y frame.
-- Marquee: etiqueta marquee en marcos.html y marquesina equivalente
-  animada con CSS.
+- Tablas: comparativas de productos y categorías en tablas.html, con caption,
+  colgroup, col, thead, tbody, tfoot, th con scope, colspan y estilos propios.
+- Iframes: video en blog.html y mapa de referencia en contacto.html.
+  Frames clásicos: frames-demo.html con frameset y frame, solo como
+  demostración académica.
+- Marquesinas: mensajes informativos animados con CSS en blog.html y
+  ofertas.html.
 
 CSS, LESS y SASS
 - CSS externo: todos los estilos están en archivos enlazados. No se usan
@@ -168,6 +169,7 @@ Créditos de fotografías:
   demostración; no envían datos a un servidor.
 - El carrito se guarda en localStorage.
 - frames-demo.html usa frameset solo como demostración de una tecnología
-  obsoleta; el sitio real utiliza iframes y diseño responsivo.
+  obsoleta; las páginas actuales usan iframes donde aportan contexto y diseño
+  responsivo.
 - El libro de reclamaciones es una simulación académica y no constituye
   un canal legal de atención.
