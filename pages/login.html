@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="../css/estilos.css" />
     <link rel="stylesheet" href="../css/estilos-less.css" />
     <link rel="stylesheet" href="../css/estilos-sass.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23a7d8f0'/%3E%3Cpath d='M16 24s-8-4.7-8-10a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 24 14c0 5.3-8 10-8 10z' fill='%2331566b'/%3E%3C/svg%3E" />
   </head>
   <body>
     <div class="topbar">
@@ -53,26 +55,56 @@
         <p>Ingresa tus datos para acceder a tu cuenta.</p>
       </section>
       <section class="content-wrap">
-        <form class="form-card" id="form-login">
-          <label>Correo electrónico</label
-          ><input required type="email" name="email" /><label>Contraseña</label
-          ><input required type="password" name="password" /><button
-            class="btn"
-            type="submit"
-          >
-            Ingresar
-          </button>
+        <form class="form-card" id="form-login" action="#" method="post">
+          <h2><i class="fa-solid fa-right-to-bracket" aria-hidden="true"></i> Iniciar sesión</h2>
+          <fieldset>
+            <legend>Datos de acceso</legend>
+            <div class="form-field">
+              <label for="login-email">Correo electrónico <span class="required">*</span></label>
+              <input
+                id="login-email"
+                required
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="correo@ejemplo.com"
+              />
+            </div>
+            <div class="form-field">
+              <label for="login-password">Contraseña <span class="required">*</span></label>
+              <input
+                id="login-password"
+                required
+                type="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Tu contraseña"
+              />
+            </div>
+          </fieldset>
+          <div class="form-check">
+            <input id="login-recordar" name="recordar" type="checkbox" />
+            <label for="login-recordar">Recordar mi sesión en este dispositivo.</label>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit">
+              <i class="fa-solid fa-arrow-right-to-bracket" aria-hidden="true"></i>
+              Ingresar
+            </button>
+            <a class="btn btn-secundario" href="registro.html">Crear cuenta</a>
+          </div>
           <p class="notice">
             Demostración académica: el acceso todavía no está conectado a un
             servidor.
           </p>
+          <p id="mensaje-form-login" class="notice" role="status" hidden></p>
         </form>
       </section>
     </main>
     <footer class="site-footer">
       <div class="footer-inner">
         <div>
-          <a class="brand" href="../index.html" style="color: #fff"
+          <a class="brand brand-footer" href="../index.html" 
             >Peque<span>Mundo</span></a
           >
           <p>
@@ -84,6 +116,7 @@
           <h3>Explora</h3>
           <a href="catalogo.html">Catálogo</a><a href="ofertas.html">Ofertas</a
           ><a href="blog.html">Consejos para padres</a>
+          <a href="../index.html#recursos">Recursos del proyecto</a>
         </div>
         <div>
           <h3>Atención</h3>
