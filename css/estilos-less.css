@@ -38,13 +38,13 @@
 .form-card input:focus,
 .form-card textarea:focus,
 .form-card select:focus {
-  border-color: #a7d8f0;
-  outline: 2px solid rgba(167, 216, 240, 0.25);
+  border-color: #45819f;
+  outline: 2px solid rgba(69, 129, 159, 0.25);
 }
 .btn:focus-visible,
 .add-cart-button:focus-visible,
 .details-button:focus-visible {
-  outline: 3px solid rgba(167, 216, 240, 0.55);
+  outline: 3px solid rgba(69, 129, 159, 0.55);
   outline-offset: 3px;
 }
 @media (max-width: 640px) {
@@ -550,7 +550,7 @@
 .media-note {
   margin-top: 1.75rem;
   padding: 0.9rem 1.1rem;
-  border-left: 4px solid #a7d8f0;
+  border-left: 4px solid #45819f;
   border-radius: 0 10px 10px 0;
   background: #f3f9fc;
   color: #526b78;
@@ -753,7 +753,7 @@
 .blog-article blockquote {
   margin: 1.25rem 0;
   padding: 0.9rem 1.25rem;
-  border-left: 4px solid #a7d8f0;
+  border-left: 4px solid #45819f;
   border-radius: 0 10px 10px 0;
   background: #f6fbfe;
   color: #46616f;
@@ -780,7 +780,7 @@
 .nosotros-historia blockquote {
   margin: 1.25rem 0;
   padding: 0.9rem 1.25rem;
-  border-left: 4px solid #a7d8f0;
+  border-left: 4px solid #45819f;
   border-radius: 0 10px 10px 0;
   background: #f6fbfe;
   color: #46616f;

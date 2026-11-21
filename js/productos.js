@@ -134,7 +134,7 @@ const productos = [
   {
     id: 6,
     nombre: "Móvil musical para cuna",
-    precio: 69.9,
+    precio: 39.9,
     categoria: "Accesorios",
     imagen:
       "https://images.unsplash.com/photo-1644249485266-b60dcf31e42b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",

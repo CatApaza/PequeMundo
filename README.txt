@@ -1,175 +1,308 @@
-PEQUEMUNDO — PROYECTO FRONTEND
-================================
+PEQUEMUNDO — PROYECTO FRONTEND ACADÉMICO
+========================================
 
-Tienda virtual académica de productos para bebés y niños. El proyecto usa
-HTML5, CSS externo, preprocesadores LESS y SASS, y el framework Foundation
-CSS 6.8.1.
+PequeMundo es una tienda virtual demostrativa orientada a productos para
+bebés y niños. El sitio fue desarrollado con HTML5, CSS externo,
+preprocesadores LESS y SASS, JavaScript y Foundation CSS 6.8.1.
 
-------------------------------------------------
-1. CÓMO VISUALIZAR EL PROYECTO
-------------------------------------------------
-1. Abre la carpeta PequeMundo en Visual Studio Code.
+Los precios, formularios y registro de datos son demostrativos. El proyecto
+no procesa pagos ni envía información a un servidor real.
+
+
+1. CONTENIDO DEL SITIO
+----------------------
+
+INICIO
+- Presentación de la tienda
+- Categorías y productos destacados
+- Carrusel animado de marcas
+- Accesos a catálogo, blog, tutoriales y comparativa
+
+COMPRAS
+- Catálogo con búsqueda, categorías y orden por precio
+- Fichas individuales de producto
+- Detalle dinámico mediante identificador
+- Carrito con cantidades, subtotal y total
+- Persistencia del carrito con localStorage
+
+INFORMACIÓN
+- Nosotros
+- Blog de consejos
+- Ofertas
+- Tutoriales con video y audio
+- Tabla comparativa de productos
+- Demostración de frames
+- Enlaces de contacto y redes sociales
+
+FORMULARIOS
+- Contacto
+- Registro de clientes
+- Inicio de sesión
+- Libro de reclamaciones
+
+
+2. EJECUCIÓN
+------------
+
+REQUISITOS
+- Navegador web moderno
+- Node.js y npm para recompilar LESS y SASS
+- Live Server u otro servidor estático recomendado
+
+INICIO RÁPIDO
+1. Abre la carpeta del proyecto en Visual Studio Code.
 2. Abre index.html con Live Server.
-3. Navega con el menú superior o con la sección "Recursos del proyecto"
-   del inicio.
+3. Explora el sitio desde el encabezado o desde los enlaces principales.
 
-Las fotografías se cargan desde Unsplash y los iconos desde Font Awesome,
-por lo que se necesita conexión a Internet. Los archivos de audio y video
-están guardados en la carpeta media/ y funcionan sin conexión.
+Los archivos principales se pueden abrir directamente, pero se recomienda
+Live Server para que funcionen correctamente las rutas relativas y la carga
+de recursos locales.
 
-------------------------------------------------
-2. ESTRUCTURA
-------------------------------------------------
-index.html                     Página de inicio
-pages/                         26 páginas internas
-css/estilos.css                Estilos base (10 %)
-css/estilos-less.css           Compilado de LESS (15 %)
-css/estilos-sass.css           Compilado de SASS (15 %)
-less/estilos.less              Fuente LESS (variables, mixins, anidación)
-scss/estilos.scss              Fuente SASS principal
-scss/_variables.scss           Variables SASS
-scss/_mixins.scss              Mixins SASS
-scss/_componentes.scss         Componentes de productos y WhatsApp
-scss/_animaciones.scss         Animaciones, transiciones y transformaciones
-scss/_foundation.scss          Rejilla y componentes Foundation
-scss/_responsive.scss          Media queries
-js/productos.js                Datos del catálogo
-js/main.js                     Búsqueda, formularios y WhatsApp
-js/carrito.js                  Carrito con localStorage
-js/detalle-producto.js         Galería y ficha de producto
-media/                         Audio, video y subtítulos
-package.json                   Scripts de compilación
+CONEXIÓN NECESARIA
+- Las fotografías de Unsplash, Google Fonts, Font Awesome y Foundation CSS
+  utilizan recursos CDN y requieren conexión a Internet.
+- El video, el audio y los subtítulos de media/ funcionan desde archivos
+  locales una vez abierto el proyecto.
 
-Páginas internas:
-- Catálogo y categorías: catalogo.html, ofertas.html, accesorios.html,
-  asientos-seguridad.html, camas-cuna.html, coches-bebes.html,
-  cunas-bebes.html, cunas-infantiles.html.
-- Fichas individuales: detalle-asiento-auto.html, detalle-cama-cuna.html,
-  detalle-coche-compacto.html, detalle-cuna-madera.html,
-  detalle-movil-musical.html, detalle-organizador.html,
-  detalle-producto.html (ficha genérica con ?id=).
-- Formularios: contacto.html, clientes.html, reclamos.html, login.html,
-  registro.html.
-- Contenido y recursos: nosotros.html, blog.html, tutoriales.html,
-  tablas.html (comparativa de productos), frames-demo.html, carrito.html.
 
-------------------------------------------------
-3. CUMPLIMIENTO DE LA CONSIGNA
-------------------------------------------------
-Tecnologías de estilos
-- LESS: less/estilos.less se compila en css/estilos-less.css. Usa variables,
-  mixins, anidación y funciones de color (fade).
-- SASS: scss/estilos.scss importa parciales con variables, mixins,
-  anidación y módulos por tema. Se compila en css/estilos-sass.css.
-- Foundation CSS: se enlaza el CDN en la página de inicio y en las páginas
-  internas, excepto en el frameset frames-demo.html. En tutoriales.html se
-  usan grid-x/cell, tabs, accordion, reveal, label, badge, progress y clases
-  de visibilidad. En blog.html se usan callout, label y badge. Las páginas de
-  catálogo y productos usan grid-x/cell y button dentro del diseño de la
-  tienda.
+3. COMPILACIÓN DE ESTILOS
+-------------------------
 
-HTML
-- 27 páginas (mínimo exigido: 14).
-- Estructura completa: DOCTYPE, html lang, head, meta charset, viewport,
-  description, author, keywords, favicon, body.
-- Etiquetas de texto: h1-h3, p, strong, em, br, blockquote, ul, ol, li,
-  dl, dt, dd, figure, figcaption, code, small.
-- Encabezado con menú, cuerpo principal y pie de página en todas las
-  páginas del sitio.
-- Formularios completos: contacto (consulta), clientes (ficha con datos,
-  dirección y preferencias), reclamos (libro de reclamaciones), login y
-  registro. Incluyen fieldset, legend, input de texto, email, tel, date,
-  password, number, range, file, select, radio, checkbox, textarea y
-  validación HTML5.
-- Multimedia: en tutoriales.html se usan imágenes con picture/srcset,
-  galería de Foundation, audio MP3, video de un bebé con póster y
-  subtítulos VTT, además de un icono SVG. Todos los recursos están
-  relacionados con el cuidado infantil.
-- Tablas: comparativas de productos y categorías en tablas.html, con caption,
-  colgroup, col, thead, tbody, tfoot, th con scope, colspan y estilos propios.
-- Iframes: video en blog.html y mapa de referencia en contacto.html.
-  Frames clásicos: frames-demo.html con frameset y frame, solo como
-  demostración académica.
-- Marquesinas: mensajes informativos animados con CSS en blog.html y
-  ofertas.html.
+Instala las dependencias:
 
-CSS, LESS y SASS
-- CSS externo: todos los estilos están en archivos enlazados. No se usan
-  atributos style en el HTML; incluso la barra de progreso de Foundation
-  toma su ancho de una clase propia.
-- LESS externo: formularios, tablas, multimedia, iframes, marquesina,
-  listas, blog, recursos y ajustes responsivos.
-- SASS externo: animaciones, transiciones, transformaciones, rejilla de
-  Foundation y media queries.
-- Animaciones: keyframes aparecer, flotar, pulso-suave y girar-icono;
-  transiciones en tarjetas, botones y galería; transformaciones de escala,
-  rotación y desplazamiento.
-- Diseño responsivo: media queries en css/estilos.css,
-  css/estilos-less.css y css/estilos-sass.css, con imágenes adaptativas y
-  componentes que cambian de tamaño.
-- Flexbox y Grid: se usan en el sitio y se refuerzan con la rejilla
-  grid-x/cell de Foundation.
+    npm install
 
-------------------------------------------------
-4. COMPILAR LESS Y SASS
-------------------------------------------------
-Requisito: Node.js instalado.
+Comandos disponibles:
 
-npm install
-npm run build        Compila LESS y SASS
-npm run build:less   Solo LESS
-npm run build:sass   Solo SASS
-npm run watch:less   Vigila el archivo LESS
-npm run watch:sass   Vigila el archivo SASS
+    npm run build        Compila LESS y SASS
+    npm run build:less   Compila solo LESS
+    npm run build:sass   Compila solo SASS
+    npm run watch:less   Vigila el archivo LESS
+    npm run watch:sass   Vigila el archivo SASS
 
-Los archivos que se enlazan desde el HTML son los de la carpeta css/.
-No edites css/estilos-less.css ni css/estilos-sass.css a mano: son
-resultados de compilación. Edita less/estilos.less y scss/*.scss.
+El HTML enlaza los archivos compilados dentro de css/:
 
-También puedes usar la extensión "Live Sass Compiler" de VS Code,
-configurando la salida en css/estilos-sass.css.
+- css/estilos.css
+- css/estilos-less.css
+- css/estilos-sass.css
 
-------------------------------------------------
-5. FOUNDATION CSS
-------------------------------------------------
-Versión: 6.8.1 mediante CDN.
-CSS: https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css
-JS:  https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/js/foundation.min.js
-jQuery: https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+Edita las fuentes LESS y SASS; no modifiques directamente los CSS compilados
+de las carpetas less y scss.
 
-El JavaScript de Foundation se carga en tutoriales.html, que usa tabs,
-accordion y reveal integrados en las guías de cuidado. El resto del sitio
-usa las clases de rejilla, botones, etiquetas y visibilidad responsiva.
 
-------------------------------------------------
-6. MULTIMEDIA DE TUTORIALES
-------------------------------------------------
-- media/video-sueno-bebe.mp4: video libre de Pexels por Kevin Sparling
-  (https://www.pexels.com/video/sleeping-newborn-baby-13271379/).
-- media/poster-sueno-bebe.jpg: fotograma del video anterior.
-- media/cancion-cuna.mp3: "Wiegenlied" de Brahms, grabación de 1906
-  procedente de Internet Archive, dominio público.
-- media/subtitulos-sueno.vtt: subtítulos en español con recomendaciones
-  de sueño seguro.
-- Las fotografías son de Unsplash y se usan con fines académicos.
+4. ESTRUCTURA REAL DEL PROYECTO
+-------------------------------
 
-Créditos de fotografías:
-- Asiento de seguridad: https://unsplash.com/photos/k03ih6IqkDY
-- Habitación con cuna: https://unsplash.com/photos/0gDtdOVhOLQ
-- Cochecito: https://unsplash.com/photos/oHZaF7rbVZk
-- Dormitorio infantil: https://unsplash.com/photos/FSsEIfS257Q
-- Accesorios y ropa: https://unsplash.com/photos/wFHaSqNxHm4
-- Juego y juguetes: https://unsplash.com/photos/hpgqbwjJ4pM
+index.html                     Página principal
 
-------------------------------------------------
-7. NOTAS ACADÉMICAS
-------------------------------------------------
-- Los precios son ficticios y referenciales.
-- Los formularios validan en el navegador y muestran un mensaje de
-  demostración; no envían datos a un servidor.
-- El carrito se guarda en localStorage.
-- frames-demo.html usa frameset solo como demostración de una tecnología
-  obsoleta; las páginas actuales usan iframes donde aportan contexto y diseño
-  responsivo.
-- El libro de reclamaciones es una simulación académica y no constituye
-  un canal legal de atención.
+pages/
+  catalogo.html                Catálogo dinámico
+  ofertas.html                 Ofertas
+  nosotros.html               Historia y preguntas frecuentes
+  blog.html                    Consejos y contenido embebido
+  contacto.html               Formulario y mapa
+  clientes.html               Registro de clientes
+  reclamos.html               Libro de reclamaciones
+  login.html                  Inicio de sesión
+  tablas.html                 Tablas comparativas
+  tutoriales.html             Video, audio y galería Foundation
+  carrito.html                Carrito de compras
+  frames-demo.html            Demostración académica de frames
+  detalle-asiento-auto.html   Ficha individual
+  detalle-cuna-madera.html    Ficha individual
+  detalle-coche-compacto.html Ficha individual
+  detalle-cama-cuna.html      Ficha individual
+  detalle-organizador.html    Ficha individual
+  detalle-movil-musical.html  Ficha individual
+  detalle-producto.html       Ficha genérica por parámetro ?id=
+
+css/
+  estilos.css                 Estilos principales
+  estilos-less.css            Resultado de la compilación LESS
+  estilos-sass.css            Resultado de la compilación SASS
+
+less/
+  estilos.less                Variables, mixins, anidación y componentes
+  estilos.css                 Copia o salida auxiliar LESS
+
+scss/
+  estilos.scss                Archivo principal SASS
+  _variables.scss             Variables
+  _mixins.scss                Mixins
+  _componentes.scss           Tarjetas, botones y componentes
+  _animaciones.scss           Keyframes y animaciones
+  _foundation.scss            Personalización de Foundation
+  _responsive.scss            Media queries y ajustes responsivos
+
+js/
+  productos.js                Catálogo y renderizado de tarjetas
+  main.js                     Filtros, formularios y búsqueda
+  carrito.js                  Operaciones del carrito
+  detalle-producto.js         Galería y ficha dinámica
+
+media/
+  video-sueno-bebe.mp4        Video MP4
+  poster-sueno-bebe.jpg       Póster del video
+  subtitulos-sueno.vtt        Subtítulos en español
+  cancion-cuna.mp3            Audio MP3
+
+
+5. FRAMEWORK FOUNDATION CSS
+---------------------------
+
+Versión utilizada: Foundation Sites 6.8.1.
+
+CDN CSS:
+https://cdn.jsdelivr.net/npm/foundation-sites@6.8.1/dist/css/foundation.min.css
+
+El sitio utiliza componentes y clases como:
+- grid-x
+- grid-margin-x / grid-margin-y
+- cell
+- grid-container
+- callout
+- button
+- tabs
+- accordion
+- reveal
+- close-button
+- progress
+- label y badge
+
+El JavaScript de Foundation se carga en tutoriales.html para inicializar los
+componentes interactivos disponibles en esa página.
+
+
+6. TECNOLOGÍAS Y ELEMENTOS IMPLEMENTADOS
+----------------------------------------
+
+HTML5
+- 19 páginas HTML en total: index.html y 18 páginas internas.
+- Supera el mínimo solicitado de 14 páginas.
+- Meta charset, viewport, descripción, idioma y favicon.
+- Encabezado con menú, contenido principal y pie de página.
+- Etiquetas semánticas y de texto: h1-h3, p, strong, em, br, blockquote,
+  ul, ol, li, dl, dt, dd, figure, figcaption y code.
+- Formularios con fieldset, legend, inputs, email, tel, date, password,
+  number, range, select, radio, checkbox, file y textarea.
+- Validación HTML5 y mensajes demostrativos procesados desde JavaScript.
+
+CSS
+- Hoja principal externa con variables, tipografía, iconos y personalización.
+- Archivos LESS y SASS enlazados desde el HTML.
+- Flexbox y Grid Layout.
+- Media queries para equipos de escritorio, tabletas y teléfonos.
+- Diseño responsivo para tablas, formularios, imágenes y galerías.
+- Transiciones en tarjetas, enlaces y botones.
+- Transformaciones al desplazarse, hacer hover o activar componentes.
+- Animaciones mediante keyframes y carruseles CSS.
+
+LESS
+- Variables y colores personalizados.
+- Mixins y estilos reutilizables.
+- Anidación de selectores.
+- Funciones de color como fade().
+- Compilación hacia css/estilos-less.css.
+
+SASS
+- Archivo principal con @import de parciales.
+- Variables globales y mixins.
+- Componentes, animaciones, Foundation y responsive.
+- Compilación hacia css/estilos-sass.css.
+
+MULTIMEDIA
+- Video MP4 con póster y subtítulos VTT en tutoriales.html.
+- Audio MP3 de demostración.
+- Imágenes locales y remotas.
+- Iconos vectoriales de Font Awesome y SVG.
+- Carrusel CSS de marcas.
+
+TABLAS
+- Caption, colgroup, col, thead, tbody y tfoot.
+- Scope en encabezados de filas y columnas.
+- Filas agrupadas y diseño responsivo.
+
+IFRAMES Y FRAMES
+- iFrames presentes en blog.html y contacto.html.
+- frames-demo.html incluye frameset y frame como demostración académica del
+  temario. Estas etiquetas pertenecen a HTML 4 y están obsoletas en HTML5.
+  Los navegadores modernos pueden limitar su compatibilidad.
+- En el resto del proyecto se utiliza una estructura HTML5 moderna.
+
+MARQUESINA
+- No se utiliza la etiqueta obsoleta <marquee>.
+- Se implementan bandas de movimiento accesibles con CSS en blog.html,
+  ofertas.html y index.html.
+- Las animaciones pueden pausarse al pasar el cursor y respetan la preferencia
+  prefers-reduced-motion cuando está disponible.
+
+
+7. COMPROBACIÓN DE LA CONSIGNA
+------------------------------
+
+REQUERIMIENTO                          ESTADO
+Más de 14 páginas HTML                 Cumple
+HTML estructurado y semántico          Cumple
+Menú, cuerpo y pie de página           Cumple
+Etiquetas de texto y enlaces           Cumple
+Formularios completos                  Cumple
+Tablas completas y personalizadas      Cumple
+Imágenes y recursos multimedia         Cumple
+iFrames                                Cumple
+Demostración de frames                 Cumple como HTML legado
+Marquesina reemplazada por CSS         Cumple conceptualmente
+LESS externo                           Cumple
+SASS externo                           Cumple
+Foundation CSS                         Cumple
+CSS externo                            Cumple
+Tipografía e iconos                    Cumple
+Animaciones y transiciones             Cumple
+Transformaciones                       Cumple
+Diseño responsivo con media queries    Cumple
+Flexbox y Grid Layout                  Cumple
+
+DISTRIBUCIÓN DE ESTILOS
+- No existe una obligación técnica de que los porcentajes sean una medida
+  automática exacta. Los tamaños compilados aproximados son:
+  CSS base: 53 %
+  LESS: 27 %
+  SASS: 20 %
+- Esta distribución difiere de los porcentajes académicos de 10 %, 15 % y
+  15 %, ya que los archivos compilados tienen tamaños diferentes. Los tres
+  tipos de hoja están efectivamente presentes y enlazados desde el sitio.
+
+
+8. DATOS Y FUNCIONALIDAD
+------------------------
+
+- El catálogo se define en js/productos.js.
+- Los precios son referenciales y tienen formato PEN mediante Intl.
+- El carrito guarda las cantidades en localStorage.
+- Las calificaciones se guardan en el navegador.
+- Los formularios muestran confirmaciones sin enviar datos a un servidor.
+- La búsqueda y los filtros se procesan en el navegador.
+- La ficha dinámica utiliza el parámetro ?id= en detalle-producto.html.
+
+
+9. CRÉDITOS Y RECURSOS
+----------------------
+
+- Fotografías demostrativas: Unsplash.
+- Iconos: Font Awesome.
+- Tipografías: Google Fonts.
+- Framework: Foundation Sites.
+- Video: recurso público de demostración relacionado con el cuidado infantil.
+- Audio: recurso musical de dominio público.
+- Subtítulos: archivo VTT local creado para la actividad académica.
+
+
+10. NOTAS ACADÉMICAS
+--------------------
+
+- Los productos y precios son ficticios.
+- Las imágenes pueden variar según la disponibilidad del proveedor remoto.
+- frames-demo.html conserva frameset y frame solo para demostrar el tema del
+  curso. No es la tecnología recomendada para una página actual.
+- El libro de reclamaciones no constituye un canal oficial de atención.
+- Este README describe el estado real del proyecto y evita atribuirle páginas,
+  estilos o funcionalidades que no existan en el repositorio.

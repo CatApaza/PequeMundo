@@ -152,7 +152,12 @@
         <div class="grid-x grid-margin-x grid-margin-y galeria-foundation">
           <div class="cell small-12 medium-4">
             <figure class="media-card">
-              <a href="camas-cuna.html">
+              <button
+                type="button"
+                class="gallery-image-trigger"
+                data-open="modal-galeria-1"
+                aria-label="Abrir el tutorial: Preparar la cuna"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1516309229383-2001fee59b2b?auto=format&fit=crop&w=700&q=80"
                   alt="Bebé descansando en una cuna"
@@ -160,16 +165,21 @@
                   width="700"
                   height="467"
                 />
-              </a>
+              </button>
               <figcaption>
-                <a href="camas-cuna.html">01 · Preparar la cuna</a>
+                <a href="catalogo.html">01 · Preparar la cuna</a>
                 <span class="label">4 min</span>
               </figcaption>
             </figure>
           </div>
           <div class="cell small-12 medium-4">
             <figure class="media-card">
-              <a href="coches-bebes.html">
+              <button
+                type="button"
+                class="gallery-image-trigger"
+                data-open="modal-galeria-2"
+                aria-label="Abrir el tutorial: Elegir el coche"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=80"
                   alt="Cochecito de bebé listo para un paseo"
@@ -177,16 +187,21 @@
                   width="700"
                   height="467"
                 />
-              </a>
+              </button>
               <figcaption>
-                <a href="coches-bebes.html">02 · Elegir el coche</a>
+                <a href="catalogo.html">02 · Elegir el coche</a>
                 <span class="label secondary">Nuevo</span>
               </figcaption>
             </figure>
           </div>
           <div class="cell small-12 medium-4">
             <figure class="media-card">
-              <a href="accesorios.html">
+              <button
+                type="button"
+                class="gallery-image-trigger"
+                data-open="modal-galeria-3"
+                aria-label="Abrir el tutorial: Organizar accesorios"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=700&q=80"
                   alt="Ropa y accesorios de bebé organizados"
@@ -194,13 +209,88 @@
                   width="700"
                   height="467"
                 />
-              </a>
+              </button>
               <figcaption>
-                <a href="accesorios.html">03 · Organizar accesorios</a>
+                <a href="catalogo.html">03 · Organizar accesorios</a>
                 <span class="label success">Fácil</span>
               </figcaption>
             </figure>
           </div>
+        </div>
+
+        <div class="reveal" id="modal-galeria-1" data-reveal>
+          <h2>
+            <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            01 · Preparar la cuna
+          </h2>
+          <div class="gallery-modal-image">
+            <img
+              src="https://images.unsplash.com/photo-1516309229383-2001fee59b2b?auto=format&fit=crop&w=700&q=80"
+              alt="Bebé descansando en una cuna"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-modal-duration">4 min</p>
+          <p>
+            Observa cómo se ve un recién nacido descansando y aplica las
+            recomendaciones: usa una superficie firme, coloca una manta
+            suave y evita almohadas dentro de la cuna. Mantén la habitación
+            a una temperatura agradable para que el bebé duerma en
+            seguridad.
+          </p>
+          <a class="button" href="catalogo.html">Ver en el catálogo</a>
+          <button class="close-button" data-close aria-label="Cerrar modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="reveal" id="modal-galeria-2" data-reveal>
+          <h2>
+            <i class="fa-solid fa-car" aria-hidden="true"></i>
+            02 · Elegir el coche
+          </h2>
+          <div class="gallery-modal-image">
+            <img
+              src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=80"
+              alt="Cochecito de bebé listo para un paseo"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-modal-duration">Nuevo</p>
+          <p>
+            Revisa que el cochecito tenga el arnés bien ajustado antes de
+            cada paseo. Elige un modelo que se ajuste al tipo de camión que
+            usas y verifica que la liberación del interruptor funcione sin
+            dificultad.
+          </p>
+          <a class="button" href="catalogo.html">Ver en el catálogo</a>
+          <button class="close-button" data-close aria-label="Cerrar modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="reveal" id="modal-galeria-3" data-reveal>
+          <h2>
+            <i class="fa-solid fa-box-open" aria-hidden="true"></i>
+            03 · Organizar accesorios
+          </h2>
+          <div class="gallery-modal-image">
+            <img
+              src="https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=700&q=80"
+              alt="Ropa y accesorios de bebé organizados"
+              loading="lazy"
+            />
+          </div>
+          <p class="gallery-modal-duration">Fácil</p>
+          <p>
+            Organiza los juguetes y accesorios al alcance del bebé y revisa
+            que todo tenga un lugar claro dentro del espacio de juego. Un
+            cajón o cesta separada te ayuda a mantener todo ordenado.
+          </p>
+          <a class="button" href="catalogo.html">Ver en el catálogo</a>
+          <button class="close-button" data-close aria-label="Cerrar modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
 
         <h2 class="section-title">Imagen responsiva del espacio infantil</h2>
@@ -370,34 +460,6 @@
               <p class="progress-meter-text">65%</p>
             </div>
           </div>
-          <p class="show-for-medium">
-            <i class="fa-solid fa-desktop" aria-hidden="true"></i>
-            Consejo para pantallas grandes: abre el modal para ver la lista de
-            regalos.
-          </p>
-          <p class="hide-for-medium">
-            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
-            En móvil, toca el botón para ver la lista de regalos.
-          </p>
-          <button class="button" type="button" data-open="modal-regalos">
-            Ver lista de regalos
-          </button>
-        </div>
-        <div class="reveal" id="modal-regalos" data-reveal>
-          <h2>Lista de regalos PequeMundo</h2>
-          <p>
-            Una cuna, un cochecito compacto y un móvil musical son los productos
-            más solicitados para preparar la llegada del bebé.
-          </p>
-          <a class="button" href="catalogo.html">Ver catálogo</a>
-          <button
-            class="close-button"
-            data-close
-            aria-label="Cerrar modal"
-            type="button"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
 
       </section>

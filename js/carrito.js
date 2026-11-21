@@ -34,16 +34,44 @@ function mostrarCarrito() {
     return;
   }
   let total = 0;
-  cont.innerHTML =
-    carrito
-      .map((item) => {
-        const p = productos.find((x) => x.id === item.id);
-        if (!p) return "";
-        total += p.precio * item.cantidad;
-        return `<p>${p.nombre} — ${item.cantidad} × S/ ${p.precio.toFixed(2)}</p>`;
-      })
-      .join("") +
-    `<hr><h3>Total: S/ ${total.toFixed(2)}</h3><button class="btn" onclick="vaciarCarrito()">Vaciar carrito</button>`;
+  const filas = carrito
+    .map((item) => {
+      const p = productos.find((x) => x.id === item.id);
+      if (!p) return "";
+      const subtotal = p.precio * item.cantidad;
+      total += subtotal;
+      return `<tr>
+        <td>${p.nombre}</td>
+        <td>${item.cantidad}</td>
+        <td class="col-numero">S/ ${p.precio.toFixed(2)}</td>
+        <td class="col-numero">S/ ${subtotal.toFixed(2)}</td>
+      </tr>`;
+    })
+    .join("");
+  cont.innerHTML = `
+    <div class="tabla-responsive">
+      <table class="tabla-datos tabla-carrito">
+        <caption>Productos y precios en tu carrito</caption>
+        <thead>
+          <tr>
+            <th scope="col">Producto</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Precio unitario</th>
+            <th scope="col">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>${filas}</tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Total</strong></td>
+            <td class="col-numero"><strong>S/ ${total.toFixed(2)}</strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="carrito-acciones">
+      <button class="btn" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </p>`;
 }
 function vaciarCarrito() {
   guardarCarrito([]);

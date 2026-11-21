@@ -77,27 +77,22 @@ document.addEventListener("DOMContentLoaded", () => {
   manejarFormulario(
     "form-contacto",
     "mensaje-form",
-    "Tu consulta se registró en esta demostración. ¡Gracias!"
-  );
-  manejarFormulario(
-    "form-registro",
-    "mensaje-form",
-    "Formulario validado correctamente (demostración frontend)."
+    "Tu consulta se registró en esta demostración. ¡Gracias!",
   );
   manejarFormulario(
     "form-login",
     "mensaje-form-login",
-    "Datos de acceso validados en el navegador (demostración frontend)."
+    "Datos de acceso validados en el navegador (demostración frontend).",
   );
   manejarFormulario(
     "form-reclamos",
     "mensaje-form-reclamos",
-    "Tu reclamo fue registrado en esta demostración. Recibirás una respuesta en un plazo máximo de 15 días hábiles."
+    "Tu reclamo fue registrado en esta demostración. Recibirás una respuesta en un plazo máximo de 15 días hábiles.",
   );
   manejarFormulario(
     "form-clientes",
     "mensaje-form-clientes",
-    "Tu ficha de cliente se registró correctamente en esta demostración."
+    "Tu ficha de cliente se registró correctamente en esta demostración.",
   );
 
   // 3.1 Presupuesto dinámico del formulario de clientes
@@ -110,18 +105,21 @@ document.addEventListener("DOMContentLoaded", () => {
     rangoPresupuesto.addEventListener("input", actualizarPresupuesto);
     document
       .getElementById("form-clientes")
-      ?.addEventListener("reset", () => requestAnimationFrame(actualizarPresupuesto));
+      ?.addEventListener("reset", () =>
+        requestAnimationFrame(actualizarPresupuesto),
+      );
     actualizarPresupuesto();
   }
 
   // 4. Botón flotante de WhatsApp automático
-  const telefono = "51935964167"; 
+  const telefono = "51935964167";
   const tituloProducto = document.querySelector("h1")?.textContent.trim();
   const esPaginaDetalle = window.location.pathname.includes("detalle-");
 
-  const mensajeWsp = esPaginaDetalle && tituloProducto
-    ? `Hola PequeMundo, necesito información sobre este producto: ${tituloProducto}`
-    : "Hola PequeMundo, necesito información sobre sus productos.";
+  const mensajeWsp =
+    esPaginaDetalle && tituloProducto
+      ? `Hola PequeMundo, necesito información sobre este producto: ${tituloProducto}`
+      : "Hola PequeMundo, necesito información sobre sus productos.";
 
   const urlWhatsApp = `https://wa.me/${telefono}?text=${encodeURIComponent(mensajeWsp)}`;
 
