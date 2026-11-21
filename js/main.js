@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (destacados) renderizarProductos(productos.slice(0, 4), destacados);
 
   if (catalogo) {
+    const esOfertas = window.location.pathname.includes("ofertas.html");
     const busqueda = document.getElementById("filtro-busqueda");
     const categoria = document.getElementById("filtro-categoria");
     const orden = document.getElementById("filtro-orden");
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultado.sort((a, b) => a.precio - b.precio);
       if (orden?.value === "mayor")
         resultado.sort((a, b) => b.precio - a.precio);
-      renderizarProductos(resultado, catalogo);
+      renderizarProductos(resultado, catalogo, esOfertas);
       if (contador)
         contador.textContent = `${resultado.length} ${resultado.length === 1 ? "producto encontrado" : "productos encontrados"}`;
     };

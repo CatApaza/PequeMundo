@@ -57,6 +57,27 @@
   font-weight: 700;
 }
 
+.discount-badge {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  padding: 0.42rem 0.68rem;
+  border-radius: 30px;
+  background: #e94d70;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(233, 77, 112, 0.25);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.product-price .original-price {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #9aaab2;
+  font-size: 0.72rem;
+}
+
 /* CONTENIDO */
 .product-info {
   display: flex;

@@ -148,6 +148,12 @@ input:focus-visible {
   font-size: 0.8rem;
   font-weight: 700;
 }
+.header-login {
+  gap: 0.45rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 30px;
+  white-space: nowrap;
+}
 .cart-link > span:first-child {
   font-size: 1.4rem;
 }
@@ -1220,6 +1226,25 @@ input:focus-visible {
   border-radius: 30px;
   font-size: 0.65rem;
   font-weight: 900;
+}
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.42rem 0.68rem;
+  border-radius: 30px;
+  background: #e94d70;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(233, 77, 112, 0.25);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+.product-price .original-price {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: #9aaab2;
+  font-size: 0.72rem;
 }
 .product-info {
   padding: 1.15rem;

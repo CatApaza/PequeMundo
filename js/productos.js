@@ -10,6 +10,7 @@ const productos = [
       "https://images.unsplash.com/photo-1516309229383-2001fee59b2b?auto=format&fit=crop&w=900&q=85",
     alt: "Bebé sentado en un asiento de seguridad para auto",
     etiqueta: "Favorito",
+    descuento: 15,
     descripcion: "Comodidad y protección para acompañar cada trayecto.",
     paginaDetalle: "detalle-asiento-auto.html",
     descripcionCompleta:
@@ -36,6 +37,7 @@ const productos = [
       "https://images.unsplash.com/photo-1721738859261-1f5e10c2054b?auto=format&fit=crop&w=900&q=85",
     alt: "Habitación infantil luminosa con una cuna blanca",
     etiqueta: "Ambiente sereno",
+    descuento: 20,
     descripcion: "Un espacio acogedor para sus momentos de descanso.",
     paginaDetalle: "detalle-cuna-madera.html",
     descripcionCompleta:
@@ -62,6 +64,7 @@ const productos = [
       "https://plus.unsplash.com/premium_photo-1661418384831-134341adc135?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     alt: "Cochecito para bebé de diseño compacto",
     etiqueta: "Para paseos",
+    descuento: 10,
     descripcion: "Una opción práctica para salir a descubrir el mundo.",
     paginaDetalle: "detalle-coche-compacto.html",
     descripcionCompleta:
@@ -88,6 +91,7 @@ const productos = [
       "https://images.unsplash.com/photo-1763478958804-33a0fe7b5137?auto=format&fit=crop&w=900&q=85",
     alt: "Dormitorio infantil de estilo cálido y delicado",
     etiqueta: "Diseño delicado",
+    descuento: 25,
     descripcion: "Un rincón pensado para crecer y descansar.",
     paginaDetalle: "detalle-cama-cuna.html",
     descripcionCompleta:
@@ -114,6 +118,7 @@ const productos = [
       "https://images.unsplash.com/photo-1766918780916-228d10b071be?auto=format&fit=crop&w=900&q=85",
     alt: "Ropa y accesorios de bebé organizados en estantes",
     etiqueta: "Pequeños detalles",
+    descuento: 12,
     descripcion: "Mantén a mano los esenciales de cada día.",
     paginaDetalle: "detalle-organizador.html",
     descripcionCompleta:
@@ -140,6 +145,7 @@ const productos = [
       "https://images.unsplash.com/photo-1644249485266-b60dcf31e42b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
     alt: "Bebé explorando un juguete durante el juego",
     etiqueta: "Un toque de ternura",
+    descuento: 18,
     descripcion: "Un detalle especial para acompañar sus primeros juegos.",
     paginaDetalle: "detalle-movil-musical.html",
     descripcionCompleta:
@@ -224,9 +230,15 @@ function rutaDetalleProducto(producto) {
   return `${prefijo}${producto.paginaDetalle}`;
 }
 
-function tarjetaProducto(producto) {
+function tarjetaProducto(producto, mostrarDescuento = false) {
   const enlaceDetalle = rutaDetalleProducto(producto);
   const calificacion = obtenerCalificacionProducto(producto.id);
+  const etiquetaDescuento = mostrarDescuento && producto.descuento
+    ? `<span class="discount-badge" aria-label="Descuento del ${producto.descuento} por ciento">-${producto.descuento}%</span>`
+    : "";
+  const precioAnterior = mostrarDescuento && producto.descuento
+    ? formatoPrecio(producto.precio / (1 - producto.descuento / 100))
+    : "";
 
   return `
         <article class="product-card" data-product-id="${producto.id}">
@@ -249,6 +261,7 @@ function tarjetaProducto(producto) {
                     <span class="product-badge">
                         ${producto.etiqueta}
                     </span>
+                    ${etiquetaDescuento}
 
                 </div>
             </a>
@@ -310,7 +323,7 @@ function tarjetaProducto(producto) {
 
                     <div class="product-price">
                         <span>Precio referencial</span>
-
+                        ${precioAnterior ? `<del class="original-price">${precioAnterior}</del>` : ""}
                         <strong>
                             ${formatoPrecio(producto.precio)}
                         </strong>
@@ -344,9 +357,9 @@ function tarjetaProducto(producto) {
 }
 
 // Renderiza productos en catálogo o en la sección de destacados.
-function renderizarProductos(lista, contenedor) {
+function renderizarProductos(lista, contenedor, mostrarDescuento = false) {
   if (!contenedor) return;
   contenedor.innerHTML = lista.length
-    ? lista.map(tarjetaProducto).join("")
+    ? lista.map((producto) => tarjetaProducto(producto, mostrarDescuento)).join("")
     : '<p class="empty-results">No encontramos productos con esos criterios. Prueba otra búsqueda o categoría.</p>';
 }
