@@ -22,7 +22,7 @@ COMPRAS
 - Catálogo con búsqueda, categorías y orden por precio
 - Fichas individuales de producto
 - Detalle dinámico mediante identificador
-- Carrito con cantidades, subtotal y total
+- Carrito con cantidades, subtotal, total y botones para eliminar uno por uno
 - Persistencia del carrito con localStorage
 
 INFORMACIÓN

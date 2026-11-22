@@ -21,6 +21,16 @@ function agregarAlCarrito(id, cantidad = 1) {
       : `${cantidadValida} unidades agregadas al carrito.`,
   );
 }
+function eliminarItem(id) {
+  const carrito = obtenerCarrito();
+  const idTexto = String(id);
+  const idx = carrito.findIndex((p) => String(p.id) === idTexto);
+  if (idx === -1) return;
+  if (carrito[idx].cantidad <= 1) carrito.splice(idx, 1);
+  else carrito[idx].cantidad -= 1;
+  guardarCarrito(carrito);
+  mostrarCarrito();
+}
 function actualizarContador() {
   const el = document.getElementById("contador-carrito");
   if (el) el.textContent = obtenerCarrito().reduce((s, p) => s + p.cantidad, 0);
@@ -36,7 +46,7 @@ function mostrarCarrito() {
   let total = 0;
   const filas = carrito
     .map((item) => {
-      const p = productos.find((x) => x.id === item.id);
+      const p = productos.find((x) => String(x.id) === String(item.id));
       if (!p) return "";
       const subtotal = p.precio * item.cantidad;
       total += subtotal;
@@ -45,6 +55,11 @@ function mostrarCarrito() {
         <td>${item.cantidad}</td>
         <td class="col-numero">S/ ${p.precio.toFixed(2)}</td>
         <td class="col-numero">S/ ${subtotal.toFixed(2)}</td>
+        <td class="col-accion">
+          <button class="button alert hollow btn-eliminar" type="button" data-eliminar-id="${item.id}">
+            Eliminar
+          </button>
+        </td>
       </tr>`;
     })
     .join("");
@@ -58,13 +73,15 @@ function mostrarCarrito() {
             <th scope="col">Cantidad</th>
             <th scope="col">Precio unitario</th>
             <th scope="col">Subtotal</th>
+            <th scope="col">Acción</th>
           </tr>
         </thead>
         <tbody>${filas}</tbody>
         <tfoot>
           <tr>
-            <td colspan="3"><strong>Total</strong></td>
+            <td colspan="4"><strong>Total</strong></td>
             <td class="col-numero"><strong>S/ ${total.toFixed(2)}</strong></td>
+            <td class="col-accion"></td>
           </tr>
         </tfoot>
       </table>
@@ -80,4 +97,11 @@ function vaciarCarrito() {
 document.addEventListener("DOMContentLoaded", () => {
   actualizarContador();
   mostrarCarrito();
+});
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-eliminar-id]");
+  if (!btn) return;
+  const id = btn.getAttribute("data-eliminar-id");
+  if (typeof id !== "string" || !id) return;
+  eliminarItem(id);
 });

@@ -68,8 +68,34 @@
         <div id="contenido-carrito" class="info-card carrito-resumen">
           Tu carrito está vacío por el momento.
         </div>
+        <div class="tabla-responsive tabla-carrito">
+          <table class="tabla-datos">
+            <caption>Productos y precios en tu carrito</caption>
+            <thead>
+              <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio unitario</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col">Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aquí aparecen tus productos</td>
+                <td></td>
+                <td class="col-numero">S/ 0.00</td>
+                <td class="col-numero">S/ 0.00</td>
+                <td class="col-accion"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <p class="carrito-acciones">
           <a class="btn" href="catalogo.html">Seguir comprando</a>
+          <button class="button alert hollow btn-eliminar" type="button" disabled>
+            Eliminar productos seleccionados
+          </button>
         </p>
       </section>
     </main>
