@@ -93,6 +93,12 @@
                     type="text"
                     placeholder="Nombres y apellidos"
                     autocomplete="name"
+                    pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+[ ]+[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+"
+                    minlength="3"
+                    title="Ingresa tu nombre y apellido usando letras."
+                    data-error-required="Ingresa tu nombre completo."
+                    data-error-pattern="Ingresa al menos nombre y apellido, usando letras."
+                    data-error-minlength="El nombre debe tener al menos 3 caracteres."
                     required
                   />
                 </div>
@@ -106,6 +112,9 @@
                     pattern="[0-9]{8}"
                     maxlength="8"
                     placeholder="8 dígitos"
+                    title="Ingresa exactamente 8 dígitos."
+                    data-error-required="Ingresa tu número de DNI."
+                    data-error-pattern="El DNI debe contener exactamente 8 dígitos."
                     required
                   />
                 </div>
@@ -117,6 +126,9 @@
                     type="email"
                     placeholder="correo@ejemplo.com"
                     autocomplete="email"
+                    title="Ingresa un correo electrónico válido."
+                    data-error-required="Ingresa tu correo electrónico."
+                    data-error-type="Ingresa un correo válido, por ejemplo nombre@ejemplo.com."
                     required
                   />
                 </div>
@@ -126,8 +138,13 @@
                     id="reclamo-telefono"
                     name="telefono"
                     type="tel"
+                    pattern="(?:\+51[ -]?)?9[0-9]{8}"
+                    inputmode="tel"
                     placeholder="+51 999 999 999"
                     autocomplete="tel"
+                    title="Ingresa 9 dígitos que comiencen con 9, con o sin prefijo +51."
+                    data-error-required="Ingresa tu número de teléfono."
+                    data-error-pattern="Teléfono inválido. Usa 9 dígitos y empieza con 9, por ejemplo 999999999."
                     required
                   />
                 </div>
@@ -188,6 +205,9 @@
                     name="pedido"
                     type="text"
                     placeholder="Ej. PM-2026-0042"
+                    pattern="PM-[0-9]{4}-[0-9]{4}"
+                    title="Usa el formato PM-AAAA-NNNN."
+                    data-error-pattern="El número de pedido debe tener el formato PM-2026-0042."
                   />
                 </div>
 
@@ -213,6 +233,7 @@
                     min="0"
                     step="0.01"
                     placeholder="0.00"
+                    data-error-range="El monto no puede ser menor que S/ 0.00."
                   />
                 </div>
 
@@ -224,6 +245,8 @@
                     rows="5"
                     minlength="20"
                     placeholder="Describe lo ocurrido con el mayor detalle posible."
+                    data-error-required="Describe el hecho ocurrido."
+                    data-error-minlength="La descripción debe tener al menos 20 caracteres."
                     required
                   ></textarea>
                 </div>
@@ -234,6 +257,9 @@
                     name="pedido-concreto"
                     rows="3"
                     placeholder="¿Qué solución esperas recibir?"
+                    minlength="10"
+                    data-error-required="Indica la solución que esperas recibir."
+                    data-error-minlength="Tu pedido concreto debe tener al menos 10 caracteres."
                     required
                   ></textarea>
                 </div>

@@ -251,6 +251,21 @@
   color: #7a8f9a;
   font-size: 0.72rem;
 }
+.field-error {
+  display: block;
+  min-height: 1.1rem;
+  margin-top: 0.35rem;
+  color: #b42318;
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"],
+.form-field select[aria-invalid="true"] {
+  border-color: #c0392b;
+  background: #fffafa;
+  outline-color: rgba(192, 57, 43, 0.2);
+}
 .form-check {
   display: flex;
   align-items: flex-start;

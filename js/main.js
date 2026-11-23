@@ -90,6 +90,84 @@ document.addEventListener("DOMContentLoaded", () => {
     "mensaje-form-reclamos",
     "Tu reclamo fue registrado en esta demostración. Recibirás una respuesta en un plazo máximo de 15 días hábiles.",
   );
+
+  // Validación visible de campos con patterns en el libro de reclamaciones
+  const formReclamos = document.getElementById("form-reclamos");
+  if (formReclamos) {
+    const controlesReclamos = Array.from(
+      formReclamos.querySelectorAll(
+        "input:not([type='radio']):not([type='checkbox']):not([type='file']), textarea, select",
+      ),
+    );
+
+    const validarControlReclamos = (control, mostrarError = true) => {
+      control.setCustomValidity("");
+      let mensaje = "";
+      const valor = typeof control.value === "string" ? control.value.trim() : "";
+
+      if (control.required && (control.type === "checkbox" || control.type === "radio")) {
+        if (!control.checked) mensaje = "Selecciona una opción.";
+      } else if (control.required && valor === "") {
+        mensaje =
+          control.dataset.errorRequired ||
+          "Completa este campo.";
+      } else if (valor !== "" && control.validity.typeMismatch) {
+        mensaje =
+          control.dataset.errorType ||
+          "Ingresa un formato válido.";
+      } else if (valor !== "" && control.validity.patternMismatch) {
+        mensaje =
+          control.dataset.errorPattern ||
+          "El valor no cumple el formato solicitado.";
+      } else if (valor !== "" && control.validity.tooShort) {
+        mensaje =
+          control.dataset.errorMinlength ||
+          `Debes ingresar al menos ${control.minLength} caracteres.`;
+      } else if (control.validity.rangeUnderflow) {
+        mensaje =
+          control.dataset.errorRange ||
+          `El valor debe ser mayor o igual a ${control.min}.`;
+      }
+
+      control.setCustomValidity(mensaje);
+      control.setAttribute("aria-invalid", mensaje ? "true" : "false");
+
+      let ayuda = control.parentElement?.querySelector(".field-error");
+      if (!ayuda) {
+        ayuda = document.createElement("small");
+        ayuda.className = "field-error";
+        ayuda.setAttribute("aria-live", "polite");
+        control.parentElement?.appendChild(ayuda);
+      }
+      ayuda.textContent = mostrarError ? mensaje : "";
+
+      if (control.id) {
+        ayuda.id = ayuda.id || `${control.id}-error`;
+        const ids = (control.getAttribute("aria-describedby") || "")
+          .split(/\s+/)
+          .filter((id) => id && id !== ayuda.id);
+        ids.push(ayuda.id);
+        control.setAttribute("aria-describedby", ids.join(" "));
+      }
+
+      return !mensaje;
+    };
+
+    controlesReclamos.forEach((control) => {
+      control.addEventListener("input", () => validarControlReclamos(control));
+      control.addEventListener("change", () => validarControlReclamos(control));
+      control.addEventListener("blur", () => validarControlReclamos(control));
+      validarControlReclamos(control, false);
+    });
+
+    formReclamos.addEventListener("reset", () => {
+      requestAnimationFrame(() => {
+        controlesReclamos.forEach((control) =>
+          validarControlReclamos(control, false),
+        );
+      });
+    });
+  }
   manejarFormulario(
     "form-clientes",
     "mensaje-form-clientes",

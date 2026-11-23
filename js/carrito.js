@@ -57,7 +57,7 @@ function mostrarCarrito() {
         <td class="col-numero">S/ ${subtotal.toFixed(2)}</td>
         <td class="col-accion">
           <button class="button alert hollow btn-eliminar" type="button" data-eliminar-id="${item.id}">
-            Eliminar
+            -
           </button>
         </td>
       </tr>`;
